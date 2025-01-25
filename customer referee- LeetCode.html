@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://leetcode.com/progress/ -->
+<html lang="en" class="light" style="color-scheme: light;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width"><meta name="description" content="Level up your coding skills and quickly land a job. This is the best place to expand your knowledge and get prepared for your next interview."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@LeetCode"><meta property="og:title" content="LeetCode - The World&#39;s Leading Online Programming Learning Platform"><meta property="og:description" content="Level up your coding skills and quickly land a job. This is the best place to expand your knowledge and get prepared for your next interview."><meta property="og:image" content="https://leetcode.com/static/images/LeetCode_Sharing.png"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="LeetCode"><title>Progress - LeetCode</title><meta name="robots" content="noindex,follow"><meta name="next-head-count" content="12"><script type="text/javascript" async="" src="./customer referee- LeetCode_files/js"></script><script type="text/javascript" async="" src="./customer referee- LeetCode_files/analytics.js.download"></script><script type="text/javascript" async="" src="./customer referee- LeetCode_files/gio.js.download"></script><script type="text/javascript"><!-- NREUM: (4) --></script><style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+          transform: scale(var(--fa-counter-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(var(--fa-li-width, 2em) * -1);
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  -webkit-animation-name: fa-beat;
+          animation-name: fa-beat;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  -webkit-animation-name: fa-bounce;
+          animation-name: fa-bounce;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  -webkit-animation-name: fa-beat-fade;
+          animation-name: fa-beat-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  -webkit-animation-name: fa-flip;
+          animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  -webkit-animation-name: fa-shake;
+          animation-name: fa-shake;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 2s);
+          animation-duration: var(--fa-animation-duration, 2s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+          animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    -webkit-animation-delay: -1ms;
+            animation-delay: -1ms;
+    -webkit-animation-duration: 1ms;
+            animation-duration: 1ms;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+  }
+}
+@-webkit-keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@-webkit-keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@-webkit-keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@-webkit-keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@-webkit-keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  -webkit-transform: rotate(var(--fa-rotate-angle, none));
+          transform: rotate(var(--fa-rotate-angle, none));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><link rel="preload" href="./customer referee- LeetCode_files/1d930943ff5b41f6.css" as="style"><link rel="stylesheet" href="./customer referee- LeetCode_files/1d930943ff5b41f6.css" data-n-g=""><link rel="preload" href="./customer referee- LeetCode_files/ab930a8b9a5e4c23.css" as="style"><link rel="stylesheet" href="./customer referee- LeetCode_files/ab930a8b9a5e4c23.css" data-n-p=""><noscript data-n-css=""></noscript><script defer="" nomodule="" src="./customer referee- LeetCode_files/polyfills-c67a75d1b6f99dc8.js.download"></script><script src="./customer referee- LeetCode_files/webpack-8992f4efcab3ee2b.js.download" defer=""></script><script src="./customer referee- LeetCode_files/framework-ac6550882a30386c.js.download" defer=""></script><script src="./customer referee- LeetCode_files/main-8309f0b3ba9fe6df.js.download" defer=""></script><script src="./customer referee- LeetCode_files/_app-c0ca18f15957a3f0.js.download" defer=""></script><script src="./customer referee- LeetCode_files/328748d6-9dd71bf15fbf1751.js.download" defer=""></script><script src="./customer referee- LeetCode_files/c829854d-add027d6e278947c.js.download" defer=""></script><script src="./customer referee- LeetCode_files/ee9ce975-cf5dc7a532185dce.js.download" defer=""></script><script src="./customer referee- LeetCode_files/4b358913-7b696ad89d9cddd0.js.download" defer=""></script><script src="./customer referee- LeetCode_files/129-07e4846883f0f080.js.download" defer=""></script><script src="./customer referee- LeetCode_files/4948-e7abee6742cde155.js.download" defer=""></script><script src="./customer referee- LeetCode_files/1664-daeac2d69868e96c.js.download" defer=""></script><script src="./customer referee- LeetCode_files/3573-40c7de6e73a209f0.js.download" defer=""></script><script src="./customer referee- LeetCode_files/6037-09e9706ea68ef985.js.download" defer=""></script><script src="./customer referee- LeetCode_files/2461-e958d665c2ab5afd.js.download" defer=""></script><script src="./customer referee- LeetCode_files/2997-b26bdce75e29be12.js.download" defer=""></script><script src="./customer referee- LeetCode_files/6908-ab6ec363cb64b8b1.js.download" defer=""></script><script src="./customer referee- LeetCode_files/8931-82276d15517b38e1.js.download" defer=""></script><script src="./customer referee- LeetCode_files/6419-bf2b0e67c50692b3.js.download" defer=""></script><script src="./customer referee- LeetCode_files/2854-e11c9e4b5fe25fad.js.download" defer=""></script><script src="./customer referee- LeetCode_files/5872-5e078be9cc936d88.js.download" defer=""></script><script src="./customer referee- LeetCode_files/9521-fe99975ff5fe1038.js.download" defer=""></script><script src="./customer referee- LeetCode_files/7745-b5d12b1bb4843401.js.download" defer=""></script><script src="./customer referee- LeetCode_files/4032-772b2f3f48429383.js.download" defer=""></script><script src="./customer referee- LeetCode_files/3052-7508fbeb137c79a5.js.download" defer=""></script><script src="./customer referee- LeetCode_files/1516-1fc06ab8132bd0c9.js.download" defer=""></script><script src="./customer referee- LeetCode_files/7834-dd5d0fa98a32646c.js.download" defer=""></script><script src="./customer referee- LeetCode_files/5490-19826692adeca89b.js.download" defer=""></script><script src="./customer referee- LeetCode_files/6770-5bfffdfaa3ca6520.js.download" defer=""></script><script src="./customer referee- LeetCode_files/progress-9b25f62b5b3b929c.js.download" defer=""></script><script src="./customer referee- LeetCode_files/_buildManifest.js.download" defer=""></script><script src="./customer referee- LeetCode_files/_ssgManifest.js.download" defer=""></script><style id="74316">.C6UnP>div{max-width:100%;padding:0 12px}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NoYXJlZC9jb21wb25lbnRzL25hdi9uYXZiYXIvaW5kZXguaXNvLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxXQUNFLGNBQWUsQ0FDZixjQUNGIiwic291cmNlc0NvbnRlbnQiOlsiLmJhbm5lckNvbnRlbnRXaWR0aEZ1bGw+ZGl2IHtcbiAgbWF4LXdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiAwIDEycHg7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/549-a8083b6939b9060b.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/4865-d49fa3413edecbf5.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/8112-e1027c1c415b43db.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/9176-7307b6d60adfd200.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/student-d956b4dbde77ed28.js.download"><script src="./customer referee- LeetCode_files/v3"></script><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/e6848cf3-e709bce199e80e90.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/c46d6b60-4ee2bbc1b979c6f9.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/c6bbd088-3853f9ca7427c9f5.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/f5d5890c-b5db13af837a2748.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/2cca2479-b4c6e203e834f259.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/d3048c20-a96db8198c3fafa3.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/e7372cb8-0b8e608449d0f2ba.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/7dfef39c-7796288f10cf2dd9.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/d59bccd2-3e6c09545275e206.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/bee240a3-1e8a74efd7d88816.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/ea88be26-43b75960b55a0567.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/469a8bf9-6df889f2f4df379a.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/37bf9728-2a4994f71ede73fb.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/82c1d43a-db7582efb1cf0077.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/cf44d55e-7af3818bd7ed3f6d.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/175675d1-7d4214c893a8873b.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/599b58c7-50bf4b8dc14658e6.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/4ad82c5e-802f4c2ef21482b5.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/60d8647c-a27d9fb5c129e9f4.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/74c95677-c54b68bdf1febed1.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/9148-98341db4a24cd68f.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/5435-d1e235a6273fb577.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/1874-7a06148b662bb784.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/4428-c422a52959f99726.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/5426-3a82e035b181264d.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/6246-c7dff37765207b36.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/6216-3d1a709b5ee2cc71.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/6834-207892fd50a8e7fa.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/2622-efcfdd122e241da3.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/6360-a5d55f1be93c446b.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/7438-f219dd528f21f12b.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/3358-1e248756112d96ea.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/2320-1b183637a1004b59.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/401-3674aae16ec1d0ab.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/9326-705c3025e703594b.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/5277-018abd42bebd56a5.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/4869-545dc63b62489d75.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/8273-c4473b69dc74a39c.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/9982-307e0560f502a026.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/923-55da870711682305.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/468-d46f452007bff231.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/8637-e10fa4d0451657e3.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/4151-9b70c454a01f771d.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/8325-5ef6fe790b8ac231.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/1006-7af1f51bf482773b.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/6390-7cb5644043c0acd6.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/4105-6d357421f4a7d685.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/2138-076d3ecfc3840e8d.js.download"><link as="script" rel="prefetch" href="./customer referee- LeetCode_files/[[...tab]]-3fb1d7b68d06bfb4.js.download"><style type="text/css">.transform-component-module_wrapper__7HFJe {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+.transform-component-module_content__uCDPE {
+  display: flex;
+  flex-wrap: wrap;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  transform-origin: 0% 0%;
+}
+.transform-component-module_content__uCDPE img {
+  pointer-events: none;
+}
+</style></head><body><div id="__next"><script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('lc-theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()</script><div class="flex min-h-screen flex-col text-label-1 dark:text-dark-label-1 min-w-[478px] bg-layer-bg dark:bg-dark-layer-bg"><div class="z-base-2 fixed left-0 right-0 top-0  md:relative bg-layer-1 dark:bg-dark-layer-1 z-nav-9" id="navbar-container"><nav id="leetcode-navbar" class="flex h-[50px] w-full items-center border-b-[1px] border-solid border-border-tertiary dark:border-border-tertiary z-nav-9 bg-layer-1 dark:bg-dark-layer-1 nav-bar-container"><div class="display-none m-auto h-[50px] w-full items-center justify-center px-6 md:flex max-w-[1200px]"><a href="https://leetcode.com/" class="mb-0.5 flex items-center mr-8"><span class="display-none h-[22px] dark:flex"><svg width="95" height="111" viewBox="0 0 95 111" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto max-w-none"><path d="M68.0063 83.0664C70.5 80.5764 74.5366 80.5829 77.0223 83.0809C79.508 85.579 79.5015 89.6226 77.0078 92.1127L65.9346 103.17C55.7187 113.371 39.06 113.519 28.6718 103.513C28.6117 103.456 23.9861 98.9201 8.72653 83.957C-1.42528 74.0029 -2.43665 58.0749 7.11648 47.8464L24.9282 28.7745C34.4095 18.6219 51.887 17.5122 62.7275 26.2789L78.9048 39.362C81.6444 41.5776 82.0723 45.5985 79.8606 48.3429C77.6488 51.0873 73.635 51.5159 70.8954 49.3003L54.7182 36.2173C49.0488 31.6325 39.1314 32.2622 34.2394 37.5006L16.4274 56.5727C11.7767 61.5522 12.2861 69.574 17.6456 74.8292C28.851 85.8169 37.4869 94.2846 37.4969 94.2942C42.8977 99.496 51.6304 99.4184 56.9331 94.1234L68.0063 83.0664Z" fill="#FFA116"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M41.1067 72.0014C37.5858 72.0014 34.7314 69.1421 34.7314 65.615C34.7314 62.0879 37.5858 59.2286 41.1067 59.2286H88.1245C91.6454 59.2286 94.4997 62.0879 94.4997 65.615C94.4997 69.1421 91.6454 72.0014 88.1245 72.0014H41.1067Z" fill="#B3B3B3"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M49.9118 2.02335C52.3173 -0.55232 56.3517 -0.686894 58.9228 1.72277C61.494 4.13244 61.6284 8.17385 59.2229 10.7495L16.4276 56.5729C11.7768 61.552 12.2861 69.5738 17.6453 74.8292L37.4088 94.2091C39.9249 96.6764 39.968 100.72 37.505 103.24C35.042 105.761 31.0056 105.804 28.4895 103.337L8.72593 83.9567C-1.42529 74.0021 -2.43665 58.0741 7.1169 47.8463L49.9118 2.02335Z" fill="white"></path></svg></span><span class="dark:display-none flex h-[22px]"><svg width="95" height="111" viewBox="0 0 95 111" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto max-w-none"><path d="M68.0063 83.0664C70.5 80.5764 74.5366 80.5829 77.0223 83.0809C79.508 85.579 79.5015 89.6226 77.0078 92.1127L65.9346 103.17C55.7187 113.371 39.06 113.519 28.6718 103.513C28.6117 103.456 23.9861 98.9201 8.72653 83.957C-1.42528 74.0029 -2.43665 58.0749 7.11648 47.8464L24.9282 28.7745C34.4095 18.6219 51.887 17.5122 62.7275 26.2789L78.9048 39.362C81.6444 41.5776 82.0723 45.5985 79.8606 48.3429C77.6488 51.0873 73.635 51.5159 70.8954 49.3003L54.7182 36.2173C49.0488 31.6325 39.1314 32.2622 34.2394 37.5006L16.4274 56.5727C11.7767 61.5522 12.2861 69.574 17.6456 74.8292C28.851 85.8169 37.4869 94.2846 37.4969 94.2942C42.8977 99.496 51.6304 99.4184 56.9331 94.1234L68.0063 83.0664Z" fill="#FFA116"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M41.1067 72.0014C37.5858 72.0014 34.7314 69.1421 34.7314 65.615C34.7314 62.0879 37.5858 59.2286 41.1067 59.2286H88.1245C91.6454 59.2286 94.4997 62.0879 94.4997 65.615C94.4997 69.1421 91.6454 72.0014 88.1245 72.0014H41.1067Z" fill="#B3B3B3"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M49.9118 2.02335C52.3173 -0.55232 56.3517 -0.686894 58.9228 1.72277C61.494 4.13244 61.6284 8.17385 59.2229 10.7495L16.4276 56.5729C11.7768 61.552 12.2861 69.5738 17.6453 74.8292L37.4088 94.2091C39.9249 96.6764 39.968 100.72 37.505 103.24C35.042 105.761 31.0056 105.804 28.4895 103.337L8.72593 83.9567C-1.42529 74.0021 -2.43665 58.0741 7.1169 47.8463L49.9118 2.02335Z" fill="black"></path></svg></span></a><ul class="relative m-0 flex h-full grow items-center gap-6 self-end p-0"><li class="relative flex h-full items-center text-sm "><a class="relative whitespace-nowrap hover:text-text-primary dark:hover:text-text-primary flex items-center text-base leading-[22px] cursor-pointer hover:text-text-primary dark:hover:text-text-primary text-text-secondary dark:text-text-secondary" href="https://leetcode.com/explore/">Explore</a></li><li class="relative flex h-full items-center text-sm "><a class="relative whitespace-nowrap hover:text-text-primary dark:hover:text-text-primary flex items-center text-base leading-[22px] cursor-pointer hover:text-text-primary dark:hover:text-text-primary text-text-secondary dark:text-text-secondary" href="https://leetcode.com/problemset">Problems</a></li><li class="relative flex h-full items-center text-sm "><a class="relative whitespace-nowrap hover:text-text-primary dark:hover:text-text-primary flex items-center text-base leading-[22px] cursor-pointer hover:text-text-primary dark:hover:text-text-primary text-text-secondary dark:text-text-secondary" href="https://leetcode.com/contest">Contest</a></li><li class="relative flex h-full items-center text-sm "><a class="relative whitespace-nowrap hover:text-text-primary dark:hover:text-text-primary flex items-center text-base leading-[22px] cursor-pointer hover:text-text-primary dark:hover:text-text-primary text-text-secondary dark:text-text-secondary" href="https://leetcode.com/discuss/">Discuss</a></li><li class="relative flex h-full items-center text-sm "><div class="relative whitespace-nowrap hover:text-text-primary dark:hover:text-text-primary flex items-center text-base leading-[22px] cursor-pointer hover:text-text-primary dark:hover:text-text-primary text-text-secondary dark:text-text-secondary"><span class="flex items-center focus:outline-none"><button class="contents" id="headlessui-menu-button-:R3cp5p6:" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state="">Interview<!-- --> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="ml-1 h-[14px] w-[14px]" aria-hidden="true"><path fill-rule="evenodd" d="M4.929 7.913l7.078 7.057 7.064-7.057a1 1 0 111.414 1.414l-7.77 7.764a1 1 0 01-1.415 0L3.515 9.328a1 1 0 011.414-1.414z" clip-rule="evenodd"></path></svg></button></span></div></li><li class="relative flex h-full items-center text-sm "><div class="relative whitespace-nowrap hover:text-text-primary dark:hover:text-text-primary flex items-center text-base leading-[22px] cursor-pointer hover:text-text-primary dark:hover:text-text-primary text-text-secondary dark:text-text-secondary"><span class="flex items-center focus:outline-none !text-brand-orange border-brand-orange"><button class="contents" id="headlessui-menu-button-:R3kp5p6:" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state="">Store<!-- --> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="ml-1 h-[14px] w-[14px]" aria-hidden="true"><path fill-rule="evenodd" d="M4.929 7.913l7.078 7.057 7.064-7.057a1 1 0 111.414 1.414l-7.77 7.764a1 1 0 01-1.415 0L3.515 9.328a1 1 0 011.414-1.414z" clip-rule="evenodd"></path></svg></button></span></div></li></ul><div class="relative flex h-full items-center"><div class="relative flex items-center space-x-2"><div class="md:relative" data-headlessui-state=""><button class="flex items-center focus:outline-none" aria-label="notification" type="button" aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:rd:"><div class="text-text-secondary dark:text-text-secondary hover:bg-fill-3 dark:hover:bg-dark-fill-3 rounded w-8 h-8 relative flex items-center justify-center group cursor-pointer focus:outline-none"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="hover:text-text-primary dark:hover:text-text-primary "><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20374 15.8174C6.18177 15.8563 6.15975 15.8945 6.13771 15.9322H17.8623C17.8403 15.8945 17.8182 15.8563 17.7963 15.8174C16.8756 14.1898 16.3333 12.0111 16.3333 9.21793C16.3333 6.93819 14.4012 5.07507 12 5.07507C9.5988 5.07507 7.66667 6.93819 7.66667 9.21793C7.66667 12.0111 7.12442 14.1898 6.20374 15.8174ZM20 17.9322H4.00001C3.00196 17.9322 2.61971 16.6307 3.45925 16.091C3.66114 15.9612 4.0464 15.5691 4.46294 14.8327C5.20893 13.5139 5.66667 11.6748 5.66667 9.21793C5.66667 5.81702 8.51018 3.07507 12 3.07507C15.4898 3.07507 18.3333 5.81702 18.3333 9.21793C18.3333 11.6748 18.7911 13.5139 19.5371 14.8327C19.9536 15.5691 20.3389 15.9612 20.5408 16.091C21.3803 16.6307 20.9981 17.9322 20 17.9322ZM12.9372 19.2783C13.2219 18.805 13.8363 18.6521 14.3096 18.9368C14.7828 19.2215 14.9357 19.836 14.651 20.3092C14.0976 21.2292 13.0875 21.7902 12 21.7902C10.9125 21.7902 9.90245 21.2292 9.34903 20.3092C9.06434 19.836 9.2172 19.2215 9.69045 18.9368C10.1637 18.6521 10.7781 18.805 11.0628 19.2783C11.2515 19.5919 11.6085 19.7902 12 19.7902C12.3915 19.7902 12.7485 19.5919 12.9372 19.2783Z"></path></svg></div></button></div><div class="popover-wrapper inline-block" data-headlessui-state=""><div><div aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:rf:"><a class="group relative flex h-8 items-center justify-center rounded p-1 hover:bg-fill-3 dark:hover:bg-dark-fill-3" href="https://leetcode.com/problems/make-lexicographically-smallest-array-by-swapping-elements/?envType=daily-question&amp;envId=2025-01-25"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="1em" height="1em" fill="currentColor" class="h-[20px] w-[20px] hover:text-text-primary dark:hover:text-text-primary text-text-secondary dark:text-text-secondary"><path fill-rule="evenodd" d="M7.19 1.564a.75.75 0 01.729.069c2.137 1.475 3.373 3.558 3.981 5.002l.641-.663a.75.75 0 011.17.115c1.633 2.536 1.659 5.537.391 7.725-1.322 2.282-3.915 2.688-5.119 2.688-1.177 0-3.679-.203-5.12-2.688-.623-1.076-.951-2.29-.842-3.528.109-1.245.656-2.463 1.697-3.54.646-.67 1.129-1.592 1.468-2.492.337-.895.51-1.709.564-2.105a.75.75 0 01.44-.583zm.784 2.023c-.1.368-.226.773-.385 1.193-.375.997-.947 2.13-1.792 3.005-.821.851-1.205 1.754-1.282 2.63-.078.884.153 1.792.647 2.645C6.176 14.81 7.925 15 8.983 15c1.03 0 2.909-.366 3.822-1.94.839-1.449.97-3.446.11-5.315l-.785.812a.75.75 0 01-1.268-.345c-.192-.794-1.04-2.948-2.888-4.625z" clip-rule="evenodd"></path></svg><span class="mx-1 text-sm font-medium hover:text-text-primary dark:hover:text-text-primary text-text-secondary dark:text-text-secondary">0</span></a></div></div></div><div style="position: fixed; top: 1px; left: 1px; width: 1px; height: 0px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px; display: none;"></div><div class="relative"><div style="position: absolute; top: 0px; right: 0px; width: 6px; height: 6px; border-radius: 50%; background-color: rgb(255, 71, 87); z-index: 3;"></div><div class="relative"><button class="flex items-center focus:outline-none" id="headlessui-menu-button-:rh:" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state=""><span id="navbar_user_avatar" class="relative ml-1 h-6 w-6"><img src="./customer referee- LeetCode_files/avatar_1737818378.png" alt="avatar" class="h-full w-full rounded-full object-cover"></span></button></div></div><div class="ml-4"><a href="https://leetcode.com/subscribe/?ref=lp_pl&amp;source=ot"><span class="display-none h-8 w-[84px] cursor-pointer  rounded-[8px] bg-[#ffa1161f] text-center leading-8 transition-colors hover:bg-[#ffa11633] lg:inline-block font-typo"><span class="text-brand-orange">Premium</span></span></a></div></div></div></div><div class="md:display-none flex h-[50px] w-full items-center justify-between pl-3 pr-[5px]"><a href="https://leetcode.com/" class="mb-0.5 flex items-center"><span class="display-none h-[22px] dark:flex"><svg width="95" height="111" viewBox="0 0 95 111" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto max-w-none"><path d="M68.0063 83.0664C70.5 80.5764 74.5366 80.5829 77.0223 83.0809C79.508 85.579 79.5015 89.6226 77.0078 92.1127L65.9346 103.17C55.7187 113.371 39.06 113.519 28.6718 103.513C28.6117 103.456 23.9861 98.9201 8.72653 83.957C-1.42528 74.0029 -2.43665 58.0749 7.11648 47.8464L24.9282 28.7745C34.4095 18.6219 51.887 17.5122 62.7275 26.2789L78.9048 39.362C81.6444 41.5776 82.0723 45.5985 79.8606 48.3429C77.6488 51.0873 73.635 51.5159 70.8954 49.3003L54.7182 36.2173C49.0488 31.6325 39.1314 32.2622 34.2394 37.5006L16.4274 56.5727C11.7767 61.5522 12.2861 69.574 17.6456 74.8292C28.851 85.8169 37.4869 94.2846 37.4969 94.2942C42.8977 99.496 51.6304 99.4184 56.9331 94.1234L68.0063 83.0664Z" fill="#FFA116"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M41.1067 72.0014C37.5858 72.0014 34.7314 69.1421 34.7314 65.615C34.7314 62.0879 37.5858 59.2286 41.1067 59.2286H88.1245C91.6454 59.2286 94.4997 62.0879 94.4997 65.615C94.4997 69.1421 91.6454 72.0014 88.1245 72.0014H41.1067Z" fill="#B3B3B3"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M49.9118 2.02335C52.3173 -0.55232 56.3517 -0.686894 58.9228 1.72277C61.494 4.13244 61.6284 8.17385 59.2229 10.7495L16.4276 56.5729C11.7768 61.552 12.2861 69.5738 17.6453 74.8292L37.4088 94.2091C39.9249 96.6764 39.968 100.72 37.505 103.24C35.042 105.761 31.0056 105.804 28.4895 103.337L8.72593 83.9567C-1.42529 74.0021 -2.43665 58.0741 7.1169 47.8463L49.9118 2.02335Z" fill="white"></path></svg></span><span class="dark:display-none flex h-[22px]"><svg width="95" height="111" viewBox="0 0 95 111" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto max-w-none"><path d="M68.0063 83.0664C70.5 80.5764 74.5366 80.5829 77.0223 83.0809C79.508 85.579 79.5015 89.6226 77.0078 92.1127L65.9346 103.17C55.7187 113.371 39.06 113.519 28.6718 103.513C28.6117 103.456 23.9861 98.9201 8.72653 83.957C-1.42528 74.0029 -2.43665 58.0749 7.11648 47.8464L24.9282 28.7745C34.4095 18.6219 51.887 17.5122 62.7275 26.2789L78.9048 39.362C81.6444 41.5776 82.0723 45.5985 79.8606 48.3429C77.6488 51.0873 73.635 51.5159 70.8954 49.3003L54.7182 36.2173C49.0488 31.6325 39.1314 32.2622 34.2394 37.5006L16.4274 56.5727C11.7767 61.5522 12.2861 69.574 17.6456 74.8292C28.851 85.8169 37.4869 94.2846 37.4969 94.2942C42.8977 99.496 51.6304 99.4184 56.9331 94.1234L68.0063 83.0664Z" fill="#FFA116"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M41.1067 72.0014C37.5858 72.0014 34.7314 69.1421 34.7314 65.615C34.7314 62.0879 37.5858 59.2286 41.1067 59.2286H88.1245C91.6454 59.2286 94.4997 62.0879 94.4997 65.615C94.4997 69.1421 91.6454 72.0014 88.1245 72.0014H41.1067Z" fill="#B3B3B3"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M49.9118 2.02335C52.3173 -0.55232 56.3517 -0.686894 58.9228 1.72277C61.494 4.13244 61.6284 8.17385 59.2229 10.7495L16.4276 56.5729C11.7768 61.552 12.2861 69.5738 17.6453 74.8292L37.4088 94.2091C39.9249 96.6764 39.968 100.72 37.505 103.24C35.042 105.761 31.0056 105.804 28.4895 103.337L8.72593 83.9567C-1.42529 74.0021 -2.43665 58.0741 7.1169 47.8463L49.9118 2.02335Z" fill="black"></path></svg></span></a><div class="z-overlay-1 flex h-full items-center"><button class="group relative"><div class="relative flex h-[40px] w-[40px] transform items-center justify-center overflow-hidden rounded-full ring-0 ring-opacity-30 transition-all duration-200"><div class="flex h-[20px] w-[20px] origin-center transform flex-col justify-between overflow-hidden py-[2px] transition-all duration-300"><div class="h-[2px] w-7 origin-left scale-y-75 transform rounded-[1px] transition-all duration-300 bg-gray-60 dark:bg-gray-60"></div><div class="h-[2px] w-7 scale-y-75 transform rounded-[1px] transition-all delay-75 duration-300 bg-gray-60 dark:bg-gray-60"></div><div class="h-[2px] w-7 origin-left scale-y-75 transform rounded-[1px] transition-all delay-150 duration-300 bg-gray-60 dark:bg-gray-60"></div><div class="absolute top-2.5 flex  transform items-center justify-between transition-all duration-300  w-0 -translate-x-10"><div class="absolute h-[2px] w-5 rotate-0 transform rounded-[1px] transition-all delay-100 duration-300 bg-gray-60 dark:bg-gray-60"></div><div class="absolute h-[2px] w-5 -rotate-0 transform rounded-[1px] transition-all delay-100 duration-300 bg-gray-60 dark:bg-gray-60"></div></div></div></div></button></div></div></nav></div><div class="md:!h-0" style="height: 50px;"></div><div class="z-nav flex w-full flex-col"></div><div class="mx-auto w-full grow p-4 md:p-6 lg:max-w-screen-xl flex pb-0 md:max-w-screen-xl md:pb-0"><div class="lc-dsw-lg:flex-row lc-dsw-lg:gap-4 lc-dsw-lg:justify-center relative flex min-h-[600px] min-w-[446px] flex-1 flex-col-reverse justify-start gap-6"><div class="lc-dsw-lg:max-w-[774px] flex w-full flex-col items-center gap-4"><div class="flex w-full items-center justify-between"><div class="text-sd-muted-foreground text-2xl font-semibold leading-8"> <!-- -->Practice History</div><div class="z-base-1 filter-bar flex justify-between gap-4"><div class="flex flex-wrap gap-2"><button class="relative inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sd-ring disabled:pointer-events-none disabled:opacity-50 border border-sd-input bg-transparent hover:bg-sd-accent text-sd-foreground hover:text-sd-accent-foreground h-7 text-xs rounded-full px-3" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:R3iup6:" data-state="closed"><div class="flex gap-2 text-sd-muted-foreground"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="filter" class="svg-inline--fa fa-filter absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 73.7C0 50.7 18.7 32 41.7 32H470.3c23 0 41.7 18.7 41.7 41.7c0 9.6-3.3 18.9-9.4 26.3L336 304.5V447.7c0 17.8-14.5 32.3-32.3 32.3c-7.3 0-14.4-2.5-20.1-7l-92.5-73.4c-9.6-7.6-15.1-19.1-15.1-31.3V304.5L9.4 100C3.3 92.6 0 83.3 0 73.7zM55 80L218.6 280.8c3.5 4.3 5.4 9.6 5.4 15.2v68.4l64 50.8V296c0-5.5 1.9-10.9 5.4-15.2L457 80H55z"></path></svg></div>Filter</div></button></div></div></div><div role="table" style="min-width:0px" class="bg-sd-card border-sd-border min-h-[475px] w-full overflow-auto rounded-[13px] border"><div class="inline-block min-w-full"><div class="border-b border-divider-border-2 dark:border-dark-divider-border-2"><div role="row" style="display:flex;flex:1 0 auto;min-width:0px"><div colspan="1" role="columnheader" style="width:150px" class="group px-4 py-2 font-normal text-label-3 dark:text-dark-label-3 hover:text-gray-8 dark:hover:text-dark-gray-8 cursor-pointer"><div class="flex items-center justify-start gap-1"><div class="select-none overflow-hidden text-ellipsis font-normal">Last Submitted</div><span class="h-3.5 w-3.5 text-gray-5 dark:text-dark-gray-5 group-hover:text-gray-6 dark:group-hover:text-dark-gray-6"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sort" class="svg-inline--fa fa-sort absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"></path></svg></div></span></div></div><div colspan="1" role="columnheader" style="flex:1" class="group px-4 py-2 font-normal text-label-3 dark:text-dark-label-3 hover:text-gray-8 dark:hover:text-dark-gray-8 cursor-pointer"><div class="flex items-center justify-start gap-1"><div class="select-none overflow-hidden text-ellipsis font-normal">Problem</div><span class="h-3.5 w-3.5 text-gray-5 dark:text-dark-gray-5 group-hover:text-gray-6 dark:group-hover:text-dark-gray-6"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sort" class="svg-inline--fa fa-sort absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"></path></svg></div></span></div></div><div colspan="1" role="columnheader" style="width:128px" class="group px-4 py-2 font-normal text-label-3 dark:text-dark-label-3"><div class="flex items-center justify-start gap-1"><div class="select-none overflow-hidden text-ellipsis font-normal">Last Result</div></div></div><div colspan="1" role="columnheader" style="width:134px" class="group px-4 py-2 font-normal text-label-3 dark:text-dark-label-3 hover:text-gray-8 dark:hover:text-dark-gray-8 cursor-pointer"><div class="flex items-center justify-start gap-1"><div class="select-none overflow-hidden text-ellipsis font-normal">Submissions</div><span class="h-3.5 w-3.5 text-gray-5 dark:text-dark-gray-5 group-hover:text-gray-6 dark:group-hover:text-dark-gray-6"><div class="relative text-[12px] leading-[normal] p-[1px] before:block before:h-3 before:w-3 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sort" class="svg-inline--fa fa-sort absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"></path></svg></div></span></div></div></div></div><div role="rowgroup"><div role="row" class="odd:bg-sd-card even:bg-sd-accent dark:odd:bg-sd-card dark:even:bg-sd-accent flex flex-col" style="display: flex; flex: 1 0 auto; min-width: 0px;"><div class="flex w-full"><div role="cell" class="px-4 py-3" style="width: 150px;"><div class="text-sd-muted-foreground h-full overflow-hidden text-ellipsis whitespace-nowrap leading-10">Thu</div></div><div role="cell" class="px-4 py-3" style="flex: 1 1 0%;"><div class="mr-4"><div class="flex"><div class="mr-2 flex justify-center"><div class="flex items-center" data-state="closed"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-success"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check" class="svg-inline--fa fa-check absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M441 103c9.4 9.4 9.4 24.6 0 33.9L177 401c-9.4 9.4-24.6 9.4-33.9 0L7 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l119 119L407 103c9.4-9.4 24.6-9.4 33.9 0z"></path></svg></div></div></div><div class="flex max-w-[300px] flex-col"><div class="truncate leading-5"><a target="_blank" class="font-semibold" href="https://leetcode.com/problems/find-customer-referee/">584. Find Customer Referee</a></div><div class="text-[14px] text-sd-easy">Easy</div></div></div></div></div><div role="cell" class="px-4 py-3" style="width: 128px;"><div class="text-sd-muted-foreground flex h-full items-center">Accepted</div></div><div role="cell" class="px-4 py-3" style="width: 134px;"><div class="text-sd-muted-foreground flex h-full items-center gap-2.5"><div>1</div><div title="Toggle Row Expanded" style="cursor: pointer;"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 111c9.4-9.4 24.6-9.4 33.9 0L465 303c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-175-175L81 337c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 111z"></path></svg></div></div></div></div></div><div class="w-full px-2"><div class="flex w-full flex-col items-center gap-2"><div role="table" class="border-sd-border w-full rounded-[13px] border" style="min-width: 0px;"><div class="inline-block w-full"><div class="border-b border-divider-border-2 dark:border-dark-divider-border-2"><div role="row" style="display: flex; flex: 1 0 auto; min-width: 0px;"><div colspan="1" role="columnheader" class="group px-3 py-2 font-normal text-label-3 dark:text-dark-label-3" style="width: 135px;"><div class="flex items-center justify-start gap-1"><div class="select-none overflow-hidden text-ellipsis font-normal">Date</div></div></div><div colspan="1" role="columnheader" class="group px-3 py-2 font-normal text-label-3 dark:text-dark-label-3" style="flex: 1 1 0%;"><div class="flex items-center justify-start gap-1"><div class="select-none overflow-hidden text-ellipsis font-normal">Result</div></div></div><div colspan="1" role="columnheader" class="group px-3 py-2 font-normal text-label-3 dark:text-dark-label-3" style="width: 135px;"><div class="flex items-center justify-start gap-1"><div class="select-none overflow-hidden text-ellipsis font-normal">Language</div></div></div><div colspan="1" role="columnheader" class="group px-3 py-2 font-normal text-label-3 dark:text-dark-label-3" style="width: 135px;"><div class="flex items-center justify-start gap-1"><div class="select-none overflow-hidden text-ellipsis font-normal">Runtime</div></div></div><div colspan="1" role="columnheader" class="group px-3 py-2 font-normal text-label-3 dark:text-dark-label-3" style="width: 135px;"><div class="flex items-center justify-start gap-1"><div class="select-none overflow-hidden text-ellipsis font-normal">Memory</div></div></div></div></div><div role="rowgroup"><div role="row" class="flex cursor-pointer flex-col" style="display: flex; flex: 1 0 auto; min-width: 0px;"><div class="flex w-full"><div role="cell" class="p-3" style="width: 135px;"><div class="text-sd-muted-foreground flex h-full items-center">2025.01.23</div></div><div role="cell" class="p-3" style="flex: 1 1 0%;"><div class="text-sm font-medium text-message-success dark:text-message-success">Accepted</div></div><div role="cell" class="p-3" style="width: 135px;"><div class="text-sd-muted-foreground flex h-full items-center"><div class="bg-sd-accent text-sd-muted-foreground rounded-full px-1.5 py-[1px] text-xs">MySQL</div></div></div><div role="cell" class="p-3" style="width: 135px;"><div class="text-sd-muted-foreground flex h-full flex-shrink-0 items-center gap-1 pr-1 text-sm"><div class="relative text-[14px] leading-[normal] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clock" class="svg-inline--fa fa-clock absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path></svg></div><div class="ellipsis line-clamp-1">897 ms</div></div></div><div role="cell" class="p-3" style="width: 135px;"><div class="text-sd-muted-foreground flex h-full flex-shrink-0 items-center gap-1 pr-1 text-sm"><div class="relative text-[14px] leading-[normal] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="microchip" class="svg-inline--fa fa-microchip absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M184 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64h-8c-35.3 0-64 28.7-64 64v8H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v48H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v48H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v8c0 35.3 28.7 64 64 64h8v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h48v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h48v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h8c35.3 0 64-28.7 64-64v-8h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V280h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V184h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448v-8c0-35.3-28.7-64-64-64h-8V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H280V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H184V24zM400 128V384c0 8.8-7.2 16-16 16H128c-8.8 0-16-7.2-16-16V128c0-8.8 7.2-16 16-16H384c8.8 0 16 7.2 16 16zM192 160c-17.7 0-32 14.3-32 32V320c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32H192zm16 48h96v96H208V208z"></path></svg></div><div class="ellipsis line-clamp-1">0B</div></div></div></div></div></div></div></div><div class="min-h-8 mb-2 mt-0 flex w-full justify-end py-0"><nav role="navigation" class="flex flex-nowrap items-center space-x-2"><button class="relative inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sd-ring disabled:pointer-events-none disabled:opacity-50 text-sd-foreground hover:bg-sd-accent hover:text-sd-accent-foreground rounded-sd-md h-[30px] p-2" aria-label="prev" disabled=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="text-label-2 dark:text-dark-label-2"><path fill-rule="evenodd" d="M16.091 4.929l-7.057 7.078 7.057 7.064a1 1 0 01-1.414 1.414l-7.764-7.77a1 1 0 010-1.415l7.764-7.785a1 1 0 111.415 1.414z" clip-rule="evenodd"></path></svg></button><div class="text-sd-muted-foreground"><span class="text-sd-foreground">1</span>/1</div><button class="relative inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sd-ring disabled:pointer-events-none disabled:opacity-50 text-sd-foreground hover:bg-sd-accent hover:text-sd-accent-foreground rounded-sd-md h-[30px] p-2" aria-label="next" disabled=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="text-label-2 dark:text-dark-label-2"><path fill-rule="evenodd" d="M7.913 19.071l7.057-7.078-7.057-7.064a1 1 0 011.414-1.414l7.764 7.77a1 1 0 010 1.415l-7.764 7.785a1 1 0 01-1.414-1.414z" clip-rule="evenodd"></path></svg></button></nav></div></div></div></div><div role="row" class="odd:bg-sd-card even:bg-sd-accent dark:odd:bg-sd-card dark:even:bg-sd-accent flex flex-col" style="display: flex; flex: 1 0 auto; min-width: 0px;"><div class="flex w-full"><div role="cell" class="px-4 py-3" style="width: 150px;"><div class="text-sd-muted-foreground h-full overflow-hidden text-ellipsis whitespace-nowrap leading-10">Thu</div></div><div role="cell" class="px-4 py-3" style="flex: 1 1 0%;"><div class="mr-4"><div class="flex"><div class="mr-2 flex justify-center"><div class="flex items-center" data-state="closed"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-success"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check" class="svg-inline--fa fa-check absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M441 103c9.4 9.4 9.4 24.6 0 33.9L177 401c-9.4 9.4-24.6 9.4-33.9 0L7 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l119 119L407 103c9.4-9.4 24.6-9.4 33.9 0z"></path></svg></div></div></div><div class="flex max-w-[300px] flex-col"><div class="truncate leading-5"><a target="_blank" class="font-semibold" href="https://leetcode.com/problems/recyclable-and-low-fat-products/">1757. Recyclable and Low Fat Products</a></div><div class="text-[14px] text-sd-easy">Easy</div></div></div></div></div><div role="cell" class="px-4 py-3" style="width: 128px;"><div class="text-sd-muted-foreground flex h-full items-center">Accepted</div></div><div role="cell" class="px-4 py-3" style="width: 134px;"><div class="text-sd-muted-foreground flex h-full items-center gap-2.5"><div>1</div><div title="Toggle Row Expanded" style="cursor: pointer;"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></div></div></div></div></div></div><div role="row" class="odd:bg-sd-card even:bg-sd-accent dark:odd:bg-sd-card dark:even:bg-sd-accent flex flex-col" style="display: flex; flex: 1 0 auto; min-width: 0px;"><div class="flex w-full"><div role="cell" class="px-4 py-3" style="width: 150px;"><div class="text-sd-muted-foreground h-full overflow-hidden text-ellipsis whitespace-nowrap leading-10">Thu</div></div><div role="cell" class="px-4 py-3" style="flex: 1 1 0%;"><div class="mr-4"><div class="flex"><div class="mr-2 flex justify-center"><div class="flex items-center" data-state="closed"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-success"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check" class="svg-inline--fa fa-check absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M441 103c9.4 9.4 9.4 24.6 0 33.9L177 401c-9.4 9.4-24.6 9.4-33.9 0L7 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l119 119L407 103c9.4-9.4 24.6-9.4 33.9 0z"></path></svg></div></div></div><div class="flex max-w-[300px] flex-col"><div class="truncate leading-5"><a target="_blank" class="font-semibold" href="https://leetcode.com/problems/big-countries/">595. Big Countries</a></div><div class="text-[14px] text-sd-easy">Easy</div></div></div></div></div><div role="cell" class="px-4 py-3" style="width: 128px;"><div class="text-sd-muted-foreground flex h-full items-center">Accepted</div></div><div role="cell" class="px-4 py-3" style="width: 134px;"><div class="text-sd-muted-foreground flex h-full items-center gap-2.5"><div>1</div><div title="Toggle Row Expanded" style="cursor: pointer;"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></div></div></div></div></div></div><div role="row" class="odd:bg-sd-card even:bg-sd-accent dark:odd:bg-sd-card dark:even:bg-sd-accent flex flex-col" style="display: flex; flex: 1 0 auto; min-width: 0px;"><div class="flex w-full"><div role="cell" class="px-4 py-3" style="width: 150px;"><div class="text-sd-muted-foreground h-full overflow-hidden text-ellipsis whitespace-nowrap leading-10">Thu</div></div><div role="cell" class="px-4 py-3" style="flex: 1 1 0%;"><div class="mr-4"><div class="flex"><div class="mr-2 flex justify-center"><div class="flex items-center" data-state="closed"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-success"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check" class="svg-inline--fa fa-check absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M441 103c9.4 9.4 9.4 24.6 0 33.9L177 401c-9.4 9.4-24.6 9.4-33.9 0L7 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l119 119L407 103c9.4-9.4 24.6-9.4 33.9 0z"></path></svg></div></div></div><div class="flex max-w-[300px] flex-col"><div class="truncate leading-5"><a target="_blank" class="font-semibold" href="https://leetcode.com/problems/game-play-analysis-i/">511. Game Play Analysis I</a></div><div class="text-[14px] text-sd-easy">Easy</div></div></div></div></div><div role="cell" class="px-4 py-3" style="width: 128px;"><div class="text-sd-muted-foreground flex h-full items-center">Accepted</div></div><div role="cell" class="px-4 py-3" style="width: 134px;"><div class="text-sd-muted-foreground flex h-full items-center gap-2.5"><div>1</div><div title="Toggle Row Expanded" style="cursor: pointer;"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></div></div></div></div></div></div><div role="row" class="odd:bg-sd-card even:bg-sd-accent dark:odd:bg-sd-card dark:even:bg-sd-accent flex flex-col" style="display: flex; flex: 1 0 auto; min-width: 0px;"><div class="flex w-full"><div role="cell" class="px-4 py-3" style="width: 150px;"><div class="text-sd-muted-foreground h-full overflow-hidden text-ellipsis whitespace-nowrap leading-10">Thu</div></div><div role="cell" class="px-4 py-3" style="flex: 1 1 0%;"><div class="mr-4"><div class="flex"><div class="mr-2 flex justify-center"><div class="flex items-center" data-state="closed"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-success"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check" class="svg-inline--fa fa-check absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M441 103c9.4 9.4 9.4 24.6 0 33.9L177 401c-9.4 9.4-24.6 9.4-33.9 0L7 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l119 119L407 103c9.4-9.4 24.6-9.4 33.9 0z"></path></svg></div></div></div><div class="flex max-w-[300px] flex-col"><div class="truncate leading-5"><a target="_blank" class="font-semibold" href="https://leetcode.com/problems/invalid-tweets/">1683. Invalid Tweets</a></div><div class="text-[14px] text-sd-easy">Easy</div></div></div></div></div><div role="cell" class="px-4 py-3" style="width: 128px;"><div class="text-sd-muted-foreground flex h-full items-center">Accepted</div></div><div role="cell" class="px-4 py-3" style="width: 134px;"><div class="text-sd-muted-foreground flex h-full items-center gap-2.5"><div>1</div><div title="Toggle Row Expanded" style="cursor: pointer;"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></div></div></div></div></div></div></div></div></div><div class="min-h-8 mt-0 flex w-full justify-end py-4"><nav role="navigation" class="flex flex-nowrap items-center space-x-2 mb-0"><button class="flex items-center justify-center px-3 h-8 rounded select-none focus:outline-none bg-fill-3 dark:bg-dark-fill-3 text-label-2 dark:text-dark-label-2 hover:bg-fill-2 dark:hover:bg-dark-fill-2 disabled:opacity-40 disabled:pointer-events-none" aria-label="prev" disabled=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="text-label-2 dark:text-dark-label-2"><path fill-rule="evenodd" d="M16.091 4.929l-7.057 7.078 7.057 7.064a1 1 0 01-1.414 1.414l-7.764-7.77a1 1 0 010-1.415l7.764-7.785a1 1 0 111.415 1.414z" clip-rule="evenodd"></path></svg></button><button class="flex items-center justify-center px-3 h-8 rounded select-none focus:outline-none pointer-events-none bg-paper dark:bg-dark-gray-5 text-label-1 dark:text-dark-label-1 shadow-level1 dark:shadow-dark-level1">1</button><button class="flex items-center justify-center px-3 h-8 rounded select-none focus:outline-none bg-fill-3 dark:bg-dark-fill-3 text-label-2 dark:text-dark-label-2 hover:bg-fill-2 dark:hover:bg-dark-fill-2 disabled:opacity-40 disabled:pointer-events-none" aria-label="next" disabled=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="text-label-2 dark:text-dark-label-2"><path fill-rule="evenodd" d="M7.913 19.071l7.057-7.078-7.057-7.064a1 1 0 011.414-1.414l7.764 7.77a1 1 0 010 1.415l-7.764 7.785a1 1 0 01-1.414-1.414z" clip-rule="evenodd"></path></svg></button></nav></div></div><div class="lc-dsw-lg:w-[360px] flex flex-col gap-4"><div class="text-sd-muted-foreground text-2xl font-semibold leading-8"> <!-- -->Summary</div><div class="bg-sd-card border-sd-border rounded-[13px] border w-full p-4"><div class="text-sd-muted-foreground text-sm font-medium">Total Solved</div><div class="mb-3.5 mt-1 flex justify-between"><div class="text-sd-blue-500 flex items-center gap-1"><div class="text-2xl font-semibold">5</div>Problems</div><div class="text-sd-muted-foreground flex items-center gap-1"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="hands-clapping" class="svg-inline--fa fa-hands-clapping absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M336 16V80c0 8.8-7.2 16-16 16s-16-7.2-16-16V16c0-8.8 7.2-16 16-16s16 7.2 16 16zm-98.7 7.1l32 48c4.9 7.4 2.9 17.3-4.4 22.2s-17.3 2.9-22.2-4.4l-32-48c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4zM135 119c9.4-9.4 24.6-9.4 33.9 0L292.7 242.7c10.1 10.1 27.3 2.9 27.3-11.3V192c0-17.7 14.3-32 32-32s32 14.3 32 32V345.6c0 57.1-30 110-78.9 139.4c-64 38.4-145.8 28.3-198.5-24.4L7 361c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l53 53c6.1 6.1 16 6.1 22.1 0s6.1-16 0-22.1L23 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l93 93c6.1 6.1 16 6.1 22.1 0s6.1-16 0-22.1L55 185c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l117 117c6.1 6.1 16 6.1 22.1 0s6.1-16 0-22.1l-93-93c-9.4-9.4-9.4-24.6 0-33.9zM433.1 484.9c-24.2 14.5-50.9 22.1-77.7 23.1c48.1-39.6 76.6-99 76.6-162.4l0-98.1c8.2-.1 16-6.4 16-16V192c0-17.7 14.3-32 32-32s32 14.3 32 32V345.6c0 57.1-30 110-78.9 139.4zM424.9 18.7c7.4 4.9 9.3 14.8 4.4 22.2l-32 48c-4.9 7.4-14.8 9.3-22.2 4.4s-9.3-14.8-4.4-22.2l32-48c4.9-7.4 14.8-9.3 22.2-4.4z"></path></svg></div>Beats 1%</div></div><div class="flex gap-2"><div class="bg-sd-accent flex grow justify-between rounded-lg px-3 py-1.5 text-xs font-medium"><div class="text-sd-easy">Easy</div><div class="text-sd-foreground">5</div></div><div class="bg-sd-accent flex grow justify-between rounded-lg px-3 py-1.5 text-xs font-medium"><div class="text-sd-medium">Med.</div><div class="text-sd-foreground">0</div></div><div class="bg-sd-accent flex grow justify-between rounded-lg px-3 py-1.5 text-xs font-medium"><div class="text-sd-hard">Hard</div><div class="text-sd-foreground">0</div></div></div></div><div class="flex h-[88px] w-full gap-4"><div class="bg-sd-card border-sd-border rounded-[13px] border flex grow flex-col p-4"><div class="text-sd-muted-foreground mb-1 text-sm">Submissions</div><div class="text-sd-purple-500 text-2xl font-semibold">5</div></div><div class="bg-sd-card border-sd-border rounded-[13px] border flex grow flex-col p-4"><div class="text-sd-muted-foreground mb-1 text-sm">Acceptance</div><div class="text-sd-green-500 text-2xl font-semibold">100.0<span class="text-md leading-5">%</span></div></div></div><div><div class="bg-sd-card border-sd-border rounded-[13px] border relative w-full p-4"><div data-highcharts-chart="1" style="overflow: hidden;"><div id="highcharts-9yd0a7z-96" dir="ltr" style="position: relative; overflow: hidden; width: 326px; height: 326px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none;" class="highcharts-container "><svg version="1.1" class="highcharts-root" style="font-family: Helvetica, Arial, sans-serif; font-size: 1rem;" xmlns="http://www.w3.org/2000/svg" width="326" height="326" viewBox="0 0 326 326" role="img" aria-label=""><desc>Created with Highcharts 11.1.0</desc><defs><filter id="highcharts-drop-shadow-1"><fedropshadow dx="1" dy="1" flood-color="#000000" flood-opacity="0.75" stdDeviation="2.5"></fedropshadow></filter><clippath id="highcharts-9yd0a7z-97-"><rect x="0" y="0" width="306" height="301" fill="none"></rect></clippath><clippath id="highcharts-9yd0a7z-98-"><rect x="0" y="0" width="306" height="301" fill="none"></rect></clippath><clippath id="highcharts-9yd0a7z-100-"><rect x="10" y="10" width="306" height="301" fill="none"></rect></clippath></defs><rect fill="transparent" class="highcharts-background" filter="none" x="0" y="0" width="326" height="326" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="10" y="10" width="306" height="301" filter="none"></rect><g class="highcharts-pane-group" data-z-index="0"></g><rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="10" y="10" width="306" height="301"></rect><g class="highcharts-series-group" data-z-index="3" filter="none"><g class="highcharts-series highcharts-series-0 highcharts-packedbubble-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="url(#highcharts-9yd0a7z-98-)"></g><g class="highcharts-markers highcharts-series-0 highcharts-packedbubble-series" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-1 highcharts-packedbubble-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="url(#highcharts-9yd0a7z-98-)"><path fill="hsl(var(--sd-accent))" stroke="hsl(var(--sd-accent))" stroke-width="0" opacity="1" class="highcharts-point" d="M 161 322 A 161 161 0 1 1 161.16099997316678 321.99991950000674 Z"></path></g><g class="highcharts-markers highcharts-series-1 highcharts-packedbubble-series" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="none"></g></g><text x="163" text-anchor="middle" class="highcharts-title" data-z-index="4" style="font-size: 1.2em; color: rgb(51, 51, 51); font-weight: bold; fill: rgb(51, 51, 51);" y="25"></text><text x="163" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);" y="323"></text><g class="highcharts-data-labels highcharts-series-0 highcharts-packedbubble-series highcharts-tracker" data-z-index="6" opacity="1" transform="translate(10,10) scale(1 1)" style="font-size: 0.7em; font-weight: bold; transition: opacity 2000ms;"><tspan class="highcharts-text-outline" fill="#000000" stroke="#000000" stroke-width="2px" stroke-linejoin="round"><tspan x="0" dy="0">​</tspan></tspan></g><g class="highcharts-data-labels highcharts-series-1 highcharts-packedbubble-series highcharts-tracker" data-z-index="6" opacity="1" transform="translate(10,10) scale(1 1)" style="font-size: 0.7em; font-weight: bold; transition: opacity 2000ms; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><tspan class="highcharts-text-outline" fill="#000000" stroke="#000000" stroke-width="2px" stroke-linejoin="round"><tspan x="0" dy="0">​</tspan></tspan><g class="highcharts-label highcharts-data-label highcharts-data-label-color-undefined highcharts-tracker" data-z-index="1" filter="none" style="transition: opacity 2000ms; font-size: 0.7em; font-weight: bold; color: rgb(0, 0, 0); text-overflow: ellipsis; white-space: nowrap; overflow: hidden;" transform="translate(-17,-22)"></g></g><g class="highcharts-control-points" data-z-index="99" clip-path="url(#highcharts-9yd0a7z-100-)"></g></svg><div class="highcharts-data-labels highcharts-series-1 highcharts-packedbubble-series highcharts-tracker" style="position: absolute; left: 10px; top: 10px; opacity: 1; visibility: inherit;"><div class="highcharts-label highcharts-data-label highcharts-data-label-color-undefined highcharts-tracker" style="position: absolute; left: -17px; top: -22px; opacity: 1; visibility: inherit;"><span data-z-index="1" style="position: absolute; font-family: Helvetica, Arial, sans-serif; font-size: 0.7em; white-space: nowrap; color: rgb(0, 0, 0); font-weight: bold; text-overflow: ellipsis; overflow: hidden; margin-left: 0px; margin-top: 0px; left: 0px; top: 0px;"><div class="relative overflow-hidden rounded-1/2 flex justify-center items-center cursor-pointer" style="height: 323px; width: 323px; background: linear-gradient(to bottom, hsl(var(--sd-accent)), hsl(var(--sd-accent)) 98.3108108108108%, hsl(var(--sd-green-100)) 98.3108108108108%, hsl(var(--sd-green-100)));">
+        <span class="inline-block font-medium text-xs break-normal whitespace-normal text-center" style="transform: scale(0.8); color: hsl(var(--sd-green-600));">Database</span>
+      </div></span></div></div></div></div><button class="inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sd-ring disabled:pointer-events-none disabled:opacity-50 border border-sd-input bg-transparent hover:bg-sd-accent text-sd-foreground hover:text-sd-accent-foreground px-2 text-xs rounded-sd-md absolute right-[5px] top-[5px] h-8 w-8"><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="magnifying-glass-plus" class="svg-inline--fa fa-magnifying-glass-plus absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" spacing="square"><path fill="currentColor" d="M208 48a160 160 0 1 1 0 320 160 160 0 1 1 0-320zm0 368c48.8 0 93.7-16.8 129.1-44.9L471 505c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9L371.1 337.1C399.2 301.7 416 256.8 416 208C416 93.1 322.9 0 208 0S0 93.1 0 208S93.1 416 208 416zM184 296c0 13.3 10.7 24 24 24s24-10.7 24-24V232h64c13.3 0 24-10.7 24-24s-10.7-24-24-24H232V120c0-13.3-10.7-24-24-24s-24 10.7-24 24v64H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h64v64z"></path></svg></div></button></div></div><div class="bg-sd-card border-sd-border rounded-[13px] border relative w-full p-4"><div dir="ltr" data-orientation="horizontal"><div role="tablist" aria-orientation="horizontal" class="text-sd-muted-foreground inline-flex items-center justify-center bg-sd-muted rounded-full p-[1px]" tabindex="0" data-orientation="horizontal" style="outline: none;"><button type="button" role="tab" aria-selected="true" aria-controls="radix-:r0:-content-SOLVED" data-state="active" id="radix-:r0:-trigger-SOLVED" class="whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 ring-offset-sd-background focus-visible:ring-sd-ring data-[state=active]:text-sd-foreground inline-flex items-center justify-center font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 data-[state=active]:shadow dark:data-[state=active]:bg-sd-accent data-[state=active]:bg-sd-popover rounded-full px-2 py-[5px] text-xs" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">Solved</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-:r0:-content-SUBMISSION" data-state="inactive" id="radix-:r0:-trigger-SUBMISSION" class="whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 ring-offset-sd-background focus-visible:ring-sd-ring data-[state=active]:text-sd-foreground inline-flex items-center justify-center font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 data-[state=active]:shadow dark:data-[state=active]:bg-sd-accent data-[state=active]:bg-sd-popover rounded-full px-2 py-[5px] text-xs" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">Submissions</button></div><div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:r0:-trigger-SOLVED" id="radix-:r0:-content-SOLVED" tabindex="0" class="ring-offset-sd-background focus-visible:ring-sd-ring mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2" style=""><div class="relative"><div data-highcharts-chart="0" style="overflow: hidden;"><div id="highcharts-9yd0a7z-0" dir="ltr" style="position: relative; overflow: hidden; width: 326px; height: 121px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none;" class="highcharts-container "><svg version="1.1" class="highcharts-root" style="font-family: Helvetica, Arial, sans-serif; font-size: 1rem;" xmlns="http://www.w3.org/2000/svg" width="326" height="121" viewBox="0 0 326 121" role="img" aria-label=""><desc>Created with Highcharts 11.1.0</desc><defs><filter id="highcharts-drop-shadow-0"><fedropshadow dx="1" dy="1" flood-color="#000000" flood-opacity="0.75" stdDeviation="2.5"></fedropshadow></filter><clippath id="highcharts-9yd0a7z-1-"><rect x="0" y="0" width="280" height="96" fill="none"></rect></clippath><clippath id="highcharts-9yd0a7z-33-"><rect x="0" y="0" width="280" height="96" fill="none"></rect></clippath></defs><rect fill="transparent" class="highcharts-background" filter="none" x="0" y="0" width="326" height="121" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="10" y="10" width="280" height="96" filter="none"></rect><g class="highcharts-pane-group" data-z-index="0"></g><g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1"><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 16.5 10 L 16.5 106" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 105.5 10 L 105.5 106" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 193.5 10 L 193.5 106" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 282.5 10 L 282.5 106" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1"><path fill="none" stroke="hsl(var(--sd-border))" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 10 106.5 L 290 106.5" opacity="1"></path><path fill="none" stroke="hsl(var(--sd-border))" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 10 58.5 L 290 58.5" opacity="1"></path><path fill="none" stroke="hsl(var(--sd-border))" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 10 9.5 L 290 9.5" opacity="1"></path></g><rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="10" y="10" width="280" height="96"></rect><g class="highcharts-axis highcharts-xaxis" data-z-index="2"><path fill="none" class="highcharts-axis-line" stroke="hsl(var(--sd-border))" stroke-width="1" data-z-index="7" d="M 10 106.5 L 290 106.5"></path></g><g class="highcharts-axis highcharts-yaxis" data-z-index="2"><path fill="none" class="highcharts-axis-line" stroke="#333333" stroke-width="0" data-z-index="7" d="M 290 10 L 290 106"></path></g><g class="highcharts-series-group" data-z-index="3" filter="none"><g class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="url(#highcharts-9yd0a7z-33-)"><path fill="hsl(var(--sd-easy))" d="M 7.5 96.5 L 7.5 96.5 A 2 2 0 0 1 7.5 96.5 L 7.5 96.5 A 0 0 0 0 1 7.5 96.5 L 7.5 96.5 A 0 0 0 0 1 7.5 96.5 L 7.5 96.5 A 2 2 0 0 1 7.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 15.5 96.5 L 15.5 96.5 A 2 2 0 0 1 15.5 96.5 L 15.5 96.5 A 0 0 0 0 1 15.5 96.5 L 15.5 96.5 A 0 0 0 0 1 15.5 96.5 L 15.5 96.5 A 2 2 0 0 1 15.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 24.5 96.5 L 24.5 96.5 A 2 2 0 0 1 24.5 96.5 L 24.5 96.5 A 0 0 0 0 1 24.5 96.5 L 24.5 96.5 A 0 0 0 0 1 24.5 96.5 L 24.5 96.5 A 2 2 0 0 1 24.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 33.5 96.5 L 33.5 96.5 A 2 2 0 0 1 33.5 96.5 L 33.5 96.5 A 0 0 0 0 1 33.5 96.5 L 33.5 96.5 A 0 0 0 0 1 33.5 96.5 L 33.5 96.5 A 2 2 0 0 1 33.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 42.5 96.5 L 42.5 96.5 A 2 2 0 0 1 42.5 96.5 L 42.5 96.5 A 0 0 0 0 1 42.5 96.5 L 42.5 96.5 A 0 0 0 0 1 42.5 96.5 L 42.5 96.5 A 2 2 0 0 1 42.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 51.5 96.5 L 51.5 96.5 A 2 2 0 0 1 51.5 96.5 L 51.5 96.5 A 0 0 0 0 1 51.5 96.5 L 51.5 96.5 A 0 0 0 0 1 51.5 96.5 L 51.5 96.5 A 2 2 0 0 1 51.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 60.5 96.5 L 60.5 96.5 A 2 2 0 0 1 60.5 96.5 L 60.5 96.5 A 0 0 0 0 1 60.5 96.5 L 60.5 96.5 A 0 0 0 0 1 60.5 96.5 L 60.5 96.5 A 2 2 0 0 1 60.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 69.5 96.5 L 69.5 96.5 A 2 2 0 0 1 69.5 96.5 L 69.5 96.5 A 0 0 0 0 1 69.5 96.5 L 69.5 96.5 A 0 0 0 0 1 69.5 96.5 L 69.5 96.5 A 2 2 0 0 1 69.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 77.5 96.5 L 77.5 96.5 A 2 2 0 0 1 77.5 96.5 L 77.5 96.5 A 0 0 0 0 1 77.5 96.5 L 77.5 96.5 A 0 0 0 0 1 77.5 96.5 L 77.5 96.5 A 2 2 0 0 1 77.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 86.5 96.5 L 86.5 96.5 A 2 2 0 0 1 86.5 96.5 L 86.5 96.5 A 0 0 0 0 1 86.5 96.5 L 86.5 96.5 A 0 0 0 0 1 86.5 96.5 L 86.5 96.5 A 2 2 0 0 1 86.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 95.5 96.5 L 95.5 96.5 A 2 2 0 0 1 95.5 96.5 L 95.5 96.5 A 0 0 0 0 1 95.5 96.5 L 95.5 96.5 A 0 0 0 0 1 95.5 96.5 L 95.5 96.5 A 2 2 0 0 1 95.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 104.5 96.5 L 104.5 96.5 A 2 2 0 0 1 104.5 96.5 L 104.5 96.5 A 0 0 0 0 1 104.5 96.5 L 104.5 96.5 A 0 0 0 0 1 104.5 96.5 L 104.5 96.5 A 2 2 0 0 1 104.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 113.5 96.5 L 113.5 96.5 A 2 2 0 0 1 113.5 96.5 L 113.5 96.5 A 0 0 0 0 1 113.5 96.5 L 113.5 96.5 A 0 0 0 0 1 113.5 96.5 L 113.5 96.5 A 2 2 0 0 1 113.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 122.5 96.5 L 122.5 96.5 A 2 2 0 0 1 122.5 96.5 L 122.5 96.5 A 0 0 0 0 1 122.5 96.5 L 122.5 96.5 A 0 0 0 0 1 122.5 96.5 L 122.5 96.5 A 2 2 0 0 1 122.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 131.5 96.5 L 131.5 96.5 A 2 2 0 0 1 131.5 96.5 L 131.5 96.5 A 0 0 0 0 1 131.5 96.5 L 131.5 96.5 A 0 0 0 0 1 131.5 96.5 L 131.5 96.5 A 2 2 0 0 1 131.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 139.5 96.5 L 139.5 96.5 A 2 2 0 0 1 139.5 96.5 L 139.5 96.5 A 0 0 0 0 1 139.5 96.5 L 139.5 96.5 A 0 0 0 0 1 139.5 96.5 L 139.5 96.5 A 2 2 0 0 1 139.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 148.5 96.5 L 148.5 96.5 A 2 2 0 0 1 148.5 96.5 L 148.5 96.5 A 0 0 0 0 1 148.5 96.5 L 148.5 96.5 A 0 0 0 0 1 148.5 96.5 L 148.5 96.5 A 2 2 0 0 1 148.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 157.5 96.5 L 157.5 96.5 A 2 2 0 0 1 157.5 96.5 L 157.5 96.5 A 0 0 0 0 1 157.5 96.5 L 157.5 96.5 A 0 0 0 0 1 157.5 96.5 L 157.5 96.5 A 2 2 0 0 1 157.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 166.5 96.5 L 166.5 96.5 A 2 2 0 0 1 166.5 96.5 L 166.5 96.5 A 0 0 0 0 1 166.5 96.5 L 166.5 96.5 A 0 0 0 0 1 166.5 96.5 L 166.5 96.5 A 2 2 0 0 1 166.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 175.5 96.5 L 175.5 96.5 A 2 2 0 0 1 175.5 96.5 L 175.5 96.5 A 0 0 0 0 1 175.5 96.5 L 175.5 96.5 A 0 0 0 0 1 175.5 96.5 L 175.5 96.5 A 2 2 0 0 1 175.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 184.5 96.5 L 184.5 96.5 A 2 2 0 0 1 184.5 96.5 L 184.5 96.5 A 0 0 0 0 1 184.5 96.5 L 184.5 96.5 A 0 0 0 0 1 184.5 96.5 L 184.5 96.5 A 2 2 0 0 1 184.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 193.5 96.5 L 193.5 96.5 A 2 2 0 0 1 193.5 96.5 L 193.5 96.5 A 0 0 0 0 1 193.5 96.5 L 193.5 96.5 A 0 0 0 0 1 193.5 96.5 L 193.5 96.5 A 2 2 0 0 1 193.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 201.5 48.5 L 201.5 48.5 A 2 2 0 0 1 203.5 50.5 L 203.5 96.5 A 0 0 0 0 1 203.5 96.5 L 199.5 96.5 A 0 0 0 0 1 199.5 96.5 L 199.5 50.5 A 2 2 0 0 1 201.5 48.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 210.5 96.5 L 210.5 96.5 A 2 2 0 0 1 210.5 96.5 L 210.5 96.5 A 0 0 0 0 1 210.5 96.5 L 210.5 96.5 A 0 0 0 0 1 210.5 96.5 L 210.5 96.5 A 2 2 0 0 1 210.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 219.5 96.5 L 219.5 96.5 A 2 2 0 0 1 219.5 96.5 L 219.5 96.5 A 0 0 0 0 1 219.5 96.5 L 219.5 96.5 A 0 0 0 0 1 219.5 96.5 L 219.5 96.5 A 2 2 0 0 1 219.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 228.5 96.5 L 228.5 96.5 A 2 2 0 0 1 228.5 96.5 L 228.5 96.5 A 0 0 0 0 1 228.5 96.5 L 228.5 96.5 A 0 0 0 0 1 228.5 96.5 L 228.5 96.5 A 2 2 0 0 1 228.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 237.5 96.5 L 237.5 96.5 A 2 2 0 0 1 237.5 96.5 L 237.5 96.5 A 0 0 0 0 1 237.5 96.5 L 237.5 96.5 A 0 0 0 0 1 237.5 96.5 L 237.5 96.5 A 2 2 0 0 1 237.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 246.5 96.5 L 246.5 96.5 A 2 2 0 0 1 246.5 96.5 L 246.5 96.5 A 0 0 0 0 1 246.5 96.5 L 246.5 96.5 A 0 0 0 0 1 246.5 96.5 L 246.5 96.5 A 2 2 0 0 1 246.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 255.5 96.5 L 255.5 96.5 A 2 2 0 0 1 255.5 96.5 L 255.5 96.5 A 0 0 0 0 1 255.5 96.5 L 255.5 96.5 A 0 0 0 0 1 255.5 96.5 L 255.5 96.5 A 2 2 0 0 1 255.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 264.5 96.5 L 264.5 96.5 A 2 2 0 0 1 264.5 96.5 L 264.5 96.5 A 0 0 0 0 1 264.5 96.5 L 264.5 96.5 A 0 0 0 0 1 264.5 96.5 L 264.5 96.5 A 2 2 0 0 1 264.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path><path fill="hsl(var(--sd-easy))" d="M 272.5 96.5 L 272.5 96.5 A 2 2 0 0 1 272.5 96.5 L 272.5 96.5 A 0 0 0 0 1 272.5 96.5 L 272.5 96.5 A 0 0 0 0 1 272.5 96.5 L 272.5 96.5 A 2 2 0 0 1 272.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-0"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-0" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-1 highcharts-column-series highcharts-color-1 highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="url(#highcharts-9yd0a7z-33-)"><path fill="hsl(var(--sd-medium))" d="M 7.5 96.5 L 7.5 96.5 A 2 2 0 0 1 7.5 96.5 L 7.5 96.5 A 0 0 0 0 1 7.5 96.5 L 7.5 96.5 A 0 0 0 0 1 7.5 96.5 L 7.5 96.5 A 2 2 0 0 1 7.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 15.5 96.5 L 15.5 96.5 A 2 2 0 0 1 15.5 96.5 L 15.5 96.5 A 0 0 0 0 1 15.5 96.5 L 15.5 96.5 A 0 0 0 0 1 15.5 96.5 L 15.5 96.5 A 2 2 0 0 1 15.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 24.5 96.5 L 24.5 96.5 A 2 2 0 0 1 24.5 96.5 L 24.5 96.5 A 0 0 0 0 1 24.5 96.5 L 24.5 96.5 A 0 0 0 0 1 24.5 96.5 L 24.5 96.5 A 2 2 0 0 1 24.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 33.5 96.5 L 33.5 96.5 A 2 2 0 0 1 33.5 96.5 L 33.5 96.5 A 0 0 0 0 1 33.5 96.5 L 33.5 96.5 A 0 0 0 0 1 33.5 96.5 L 33.5 96.5 A 2 2 0 0 1 33.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 42.5 96.5 L 42.5 96.5 A 2 2 0 0 1 42.5 96.5 L 42.5 96.5 A 0 0 0 0 1 42.5 96.5 L 42.5 96.5 A 0 0 0 0 1 42.5 96.5 L 42.5 96.5 A 2 2 0 0 1 42.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 51.5 96.5 L 51.5 96.5 A 2 2 0 0 1 51.5 96.5 L 51.5 96.5 A 0 0 0 0 1 51.5 96.5 L 51.5 96.5 A 0 0 0 0 1 51.5 96.5 L 51.5 96.5 A 2 2 0 0 1 51.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 60.5 96.5 L 60.5 96.5 A 2 2 0 0 1 60.5 96.5 L 60.5 96.5 A 0 0 0 0 1 60.5 96.5 L 60.5 96.5 A 0 0 0 0 1 60.5 96.5 L 60.5 96.5 A 2 2 0 0 1 60.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 69.5 96.5 L 69.5 96.5 A 2 2 0 0 1 69.5 96.5 L 69.5 96.5 A 0 0 0 0 1 69.5 96.5 L 69.5 96.5 A 0 0 0 0 1 69.5 96.5 L 69.5 96.5 A 2 2 0 0 1 69.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 77.5 96.5 L 77.5 96.5 A 2 2 0 0 1 77.5 96.5 L 77.5 96.5 A 0 0 0 0 1 77.5 96.5 L 77.5 96.5 A 0 0 0 0 1 77.5 96.5 L 77.5 96.5 A 2 2 0 0 1 77.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 86.5 96.5 L 86.5 96.5 A 2 2 0 0 1 86.5 96.5 L 86.5 96.5 A 0 0 0 0 1 86.5 96.5 L 86.5 96.5 A 0 0 0 0 1 86.5 96.5 L 86.5 96.5 A 2 2 0 0 1 86.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 95.5 96.5 L 95.5 96.5 A 2 2 0 0 1 95.5 96.5 L 95.5 96.5 A 0 0 0 0 1 95.5 96.5 L 95.5 96.5 A 0 0 0 0 1 95.5 96.5 L 95.5 96.5 A 2 2 0 0 1 95.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 104.5 96.5 L 104.5 96.5 A 2 2 0 0 1 104.5 96.5 L 104.5 96.5 A 0 0 0 0 1 104.5 96.5 L 104.5 96.5 A 0 0 0 0 1 104.5 96.5 L 104.5 96.5 A 2 2 0 0 1 104.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 113.5 96.5 L 113.5 96.5 A 2 2 0 0 1 113.5 96.5 L 113.5 96.5 A 0 0 0 0 1 113.5 96.5 L 113.5 96.5 A 0 0 0 0 1 113.5 96.5 L 113.5 96.5 A 2 2 0 0 1 113.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 122.5 96.5 L 122.5 96.5 A 2 2 0 0 1 122.5 96.5 L 122.5 96.5 A 0 0 0 0 1 122.5 96.5 L 122.5 96.5 A 0 0 0 0 1 122.5 96.5 L 122.5 96.5 A 2 2 0 0 1 122.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 131.5 96.5 L 131.5 96.5 A 2 2 0 0 1 131.5 96.5 L 131.5 96.5 A 0 0 0 0 1 131.5 96.5 L 131.5 96.5 A 0 0 0 0 1 131.5 96.5 L 131.5 96.5 A 2 2 0 0 1 131.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 139.5 96.5 L 139.5 96.5 A 2 2 0 0 1 139.5 96.5 L 139.5 96.5 A 0 0 0 0 1 139.5 96.5 L 139.5 96.5 A 0 0 0 0 1 139.5 96.5 L 139.5 96.5 A 2 2 0 0 1 139.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 148.5 96.5 L 148.5 96.5 A 2 2 0 0 1 148.5 96.5 L 148.5 96.5 A 0 0 0 0 1 148.5 96.5 L 148.5 96.5 A 0 0 0 0 1 148.5 96.5 L 148.5 96.5 A 2 2 0 0 1 148.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 157.5 96.5 L 157.5 96.5 A 2 2 0 0 1 157.5 96.5 L 157.5 96.5 A 0 0 0 0 1 157.5 96.5 L 157.5 96.5 A 0 0 0 0 1 157.5 96.5 L 157.5 96.5 A 2 2 0 0 1 157.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 166.5 96.5 L 166.5 96.5 A 2 2 0 0 1 166.5 96.5 L 166.5 96.5 A 0 0 0 0 1 166.5 96.5 L 166.5 96.5 A 0 0 0 0 1 166.5 96.5 L 166.5 96.5 A 2 2 0 0 1 166.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 175.5 96.5 L 175.5 96.5 A 2 2 0 0 1 175.5 96.5 L 175.5 96.5 A 0 0 0 0 1 175.5 96.5 L 175.5 96.5 A 0 0 0 0 1 175.5 96.5 L 175.5 96.5 A 2 2 0 0 1 175.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 184.5 96.5 L 184.5 96.5 A 2 2 0 0 1 184.5 96.5 L 184.5 96.5 A 0 0 0 0 1 184.5 96.5 L 184.5 96.5 A 0 0 0 0 1 184.5 96.5 L 184.5 96.5 A 2 2 0 0 1 184.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 193.5 96.5 L 193.5 96.5 A 2 2 0 0 1 193.5 96.5 L 193.5 96.5 A 0 0 0 0 1 193.5 96.5 L 193.5 96.5 A 0 0 0 0 1 193.5 96.5 L 193.5 96.5 A 2 2 0 0 1 193.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 199.5 96.5 L 203.5 96.5 A 0 0 0 0 1 203.5 96.5 L 203.5 96.5 A 0 0 0 0 1 203.5 96.5 L 199.5 96.5 A 0 0 0 0 1 199.5 96.5 L 199.5 96.5 A 0 0 0 0 1 199.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 210.5 96.5 L 210.5 96.5 A 2 2 0 0 1 210.5 96.5 L 210.5 96.5 A 0 0 0 0 1 210.5 96.5 L 210.5 96.5 A 0 0 0 0 1 210.5 96.5 L 210.5 96.5 A 2 2 0 0 1 210.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 219.5 96.5 L 219.5 96.5 A 2 2 0 0 1 219.5 96.5 L 219.5 96.5 A 0 0 0 0 1 219.5 96.5 L 219.5 96.5 A 0 0 0 0 1 219.5 96.5 L 219.5 96.5 A 2 2 0 0 1 219.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 228.5 96.5 L 228.5 96.5 A 2 2 0 0 1 228.5 96.5 L 228.5 96.5 A 0 0 0 0 1 228.5 96.5 L 228.5 96.5 A 0 0 0 0 1 228.5 96.5 L 228.5 96.5 A 2 2 0 0 1 228.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 237.5 96.5 L 237.5 96.5 A 2 2 0 0 1 237.5 96.5 L 237.5 96.5 A 0 0 0 0 1 237.5 96.5 L 237.5 96.5 A 0 0 0 0 1 237.5 96.5 L 237.5 96.5 A 2 2 0 0 1 237.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 246.5 96.5 L 246.5 96.5 A 2 2 0 0 1 246.5 96.5 L 246.5 96.5 A 0 0 0 0 1 246.5 96.5 L 246.5 96.5 A 0 0 0 0 1 246.5 96.5 L 246.5 96.5 A 2 2 0 0 1 246.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 255.5 96.5 L 255.5 96.5 A 2 2 0 0 1 255.5 96.5 L 255.5 96.5 A 0 0 0 0 1 255.5 96.5 L 255.5 96.5 A 0 0 0 0 1 255.5 96.5 L 255.5 96.5 A 2 2 0 0 1 255.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 264.5 96.5 L 264.5 96.5 A 2 2 0 0 1 264.5 96.5 L 264.5 96.5 A 0 0 0 0 1 264.5 96.5 L 264.5 96.5 A 0 0 0 0 1 264.5 96.5 L 264.5 96.5 A 2 2 0 0 1 264.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path><path fill="hsl(var(--sd-medium))" d="M 272.5 96.5 L 272.5 96.5 A 2 2 0 0 1 272.5 96.5 L 272.5 96.5 A 0 0 0 0 1 272.5 96.5 L 272.5 96.5 A 0 0 0 0 1 272.5 96.5 L 272.5 96.5 A 2 2 0 0 1 272.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-1"></path></g><g class="highcharts-markers highcharts-series-1 highcharts-column-series highcharts-color-1" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-2 highcharts-column-series highcharts-color-2 highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="url(#highcharts-9yd0a7z-33-)"><path fill="hsl(var(--sd-hard))" d="M 7.5 96.5 L 7.5 96.5 A 2 2 0 0 1 7.5 96.5 L 7.5 96.5 A 0 0 0 0 1 7.5 96.5 L 7.5 96.5 A 0 0 0 0 1 7.5 96.5 L 7.5 96.5 A 2 2 0 0 1 7.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 15.5 96.5 L 15.5 96.5 A 2 2 0 0 1 15.5 96.5 L 15.5 96.5 A 0 0 0 0 1 15.5 96.5 L 15.5 96.5 A 0 0 0 0 1 15.5 96.5 L 15.5 96.5 A 2 2 0 0 1 15.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 24.5 96.5 L 24.5 96.5 A 2 2 0 0 1 24.5 96.5 L 24.5 96.5 A 0 0 0 0 1 24.5 96.5 L 24.5 96.5 A 0 0 0 0 1 24.5 96.5 L 24.5 96.5 A 2 2 0 0 1 24.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 33.5 96.5 L 33.5 96.5 A 2 2 0 0 1 33.5 96.5 L 33.5 96.5 A 0 0 0 0 1 33.5 96.5 L 33.5 96.5 A 0 0 0 0 1 33.5 96.5 L 33.5 96.5 A 2 2 0 0 1 33.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 42.5 96.5 L 42.5 96.5 A 2 2 0 0 1 42.5 96.5 L 42.5 96.5 A 0 0 0 0 1 42.5 96.5 L 42.5 96.5 A 0 0 0 0 1 42.5 96.5 L 42.5 96.5 A 2 2 0 0 1 42.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 51.5 96.5 L 51.5 96.5 A 2 2 0 0 1 51.5 96.5 L 51.5 96.5 A 0 0 0 0 1 51.5 96.5 L 51.5 96.5 A 0 0 0 0 1 51.5 96.5 L 51.5 96.5 A 2 2 0 0 1 51.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 60.5 96.5 L 60.5 96.5 A 2 2 0 0 1 60.5 96.5 L 60.5 96.5 A 0 0 0 0 1 60.5 96.5 L 60.5 96.5 A 0 0 0 0 1 60.5 96.5 L 60.5 96.5 A 2 2 0 0 1 60.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 69.5 96.5 L 69.5 96.5 A 2 2 0 0 1 69.5 96.5 L 69.5 96.5 A 0 0 0 0 1 69.5 96.5 L 69.5 96.5 A 0 0 0 0 1 69.5 96.5 L 69.5 96.5 A 2 2 0 0 1 69.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 77.5 96.5 L 77.5 96.5 A 2 2 0 0 1 77.5 96.5 L 77.5 96.5 A 0 0 0 0 1 77.5 96.5 L 77.5 96.5 A 0 0 0 0 1 77.5 96.5 L 77.5 96.5 A 2 2 0 0 1 77.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 86.5 96.5 L 86.5 96.5 A 2 2 0 0 1 86.5 96.5 L 86.5 96.5 A 0 0 0 0 1 86.5 96.5 L 86.5 96.5 A 0 0 0 0 1 86.5 96.5 L 86.5 96.5 A 2 2 0 0 1 86.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 95.5 96.5 L 95.5 96.5 A 2 2 0 0 1 95.5 96.5 L 95.5 96.5 A 0 0 0 0 1 95.5 96.5 L 95.5 96.5 A 0 0 0 0 1 95.5 96.5 L 95.5 96.5 A 2 2 0 0 1 95.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 104.5 96.5 L 104.5 96.5 A 2 2 0 0 1 104.5 96.5 L 104.5 96.5 A 0 0 0 0 1 104.5 96.5 L 104.5 96.5 A 0 0 0 0 1 104.5 96.5 L 104.5 96.5 A 2 2 0 0 1 104.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 113.5 96.5 L 113.5 96.5 A 2 2 0 0 1 113.5 96.5 L 113.5 96.5 A 0 0 0 0 1 113.5 96.5 L 113.5 96.5 A 0 0 0 0 1 113.5 96.5 L 113.5 96.5 A 2 2 0 0 1 113.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 122.5 96.5 L 122.5 96.5 A 2 2 0 0 1 122.5 96.5 L 122.5 96.5 A 0 0 0 0 1 122.5 96.5 L 122.5 96.5 A 0 0 0 0 1 122.5 96.5 L 122.5 96.5 A 2 2 0 0 1 122.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 131.5 96.5 L 131.5 96.5 A 2 2 0 0 1 131.5 96.5 L 131.5 96.5 A 0 0 0 0 1 131.5 96.5 L 131.5 96.5 A 0 0 0 0 1 131.5 96.5 L 131.5 96.5 A 2 2 0 0 1 131.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 139.5 96.5 L 139.5 96.5 A 2 2 0 0 1 139.5 96.5 L 139.5 96.5 A 0 0 0 0 1 139.5 96.5 L 139.5 96.5 A 0 0 0 0 1 139.5 96.5 L 139.5 96.5 A 2 2 0 0 1 139.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 148.5 96.5 L 148.5 96.5 A 2 2 0 0 1 148.5 96.5 L 148.5 96.5 A 0 0 0 0 1 148.5 96.5 L 148.5 96.5 A 0 0 0 0 1 148.5 96.5 L 148.5 96.5 A 2 2 0 0 1 148.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 157.5 96.5 L 157.5 96.5 A 2 2 0 0 1 157.5 96.5 L 157.5 96.5 A 0 0 0 0 1 157.5 96.5 L 157.5 96.5 A 0 0 0 0 1 157.5 96.5 L 157.5 96.5 A 2 2 0 0 1 157.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 166.5 96.5 L 166.5 96.5 A 2 2 0 0 1 166.5 96.5 L 166.5 96.5 A 0 0 0 0 1 166.5 96.5 L 166.5 96.5 A 0 0 0 0 1 166.5 96.5 L 166.5 96.5 A 2 2 0 0 1 166.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 175.5 96.5 L 175.5 96.5 A 2 2 0 0 1 175.5 96.5 L 175.5 96.5 A 0 0 0 0 1 175.5 96.5 L 175.5 96.5 A 0 0 0 0 1 175.5 96.5 L 175.5 96.5 A 2 2 0 0 1 175.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 184.5 96.5 L 184.5 96.5 A 2 2 0 0 1 184.5 96.5 L 184.5 96.5 A 0 0 0 0 1 184.5 96.5 L 184.5 96.5 A 0 0 0 0 1 184.5 96.5 L 184.5 96.5 A 2 2 0 0 1 184.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 193.5 96.5 L 193.5 96.5 A 2 2 0 0 1 193.5 96.5 L 193.5 96.5 A 0 0 0 0 1 193.5 96.5 L 193.5 96.5 A 0 0 0 0 1 193.5 96.5 L 193.5 96.5 A 2 2 0 0 1 193.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 199.5 96.5 L 203.5 96.5 A 0 0 0 0 1 203.5 96.5 L 203.5 96.5 A 0 0 0 0 1 203.5 96.5 L 199.5 96.5 A 0 0 0 0 1 199.5 96.5 L 199.5 96.5 A 0 0 0 0 1 199.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 210.5 96.5 L 210.5 96.5 A 2 2 0 0 1 210.5 96.5 L 210.5 96.5 A 0 0 0 0 1 210.5 96.5 L 210.5 96.5 A 0 0 0 0 1 210.5 96.5 L 210.5 96.5 A 2 2 0 0 1 210.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 219.5 96.5 L 219.5 96.5 A 2 2 0 0 1 219.5 96.5 L 219.5 96.5 A 0 0 0 0 1 219.5 96.5 L 219.5 96.5 A 0 0 0 0 1 219.5 96.5 L 219.5 96.5 A 2 2 0 0 1 219.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 228.5 96.5 L 228.5 96.5 A 2 2 0 0 1 228.5 96.5 L 228.5 96.5 A 0 0 0 0 1 228.5 96.5 L 228.5 96.5 A 0 0 0 0 1 228.5 96.5 L 228.5 96.5 A 2 2 0 0 1 228.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 237.5 96.5 L 237.5 96.5 A 2 2 0 0 1 237.5 96.5 L 237.5 96.5 A 0 0 0 0 1 237.5 96.5 L 237.5 96.5 A 0 0 0 0 1 237.5 96.5 L 237.5 96.5 A 2 2 0 0 1 237.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 246.5 96.5 L 246.5 96.5 A 2 2 0 0 1 246.5 96.5 L 246.5 96.5 A 0 0 0 0 1 246.5 96.5 L 246.5 96.5 A 0 0 0 0 1 246.5 96.5 L 246.5 96.5 A 2 2 0 0 1 246.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 255.5 96.5 L 255.5 96.5 A 2 2 0 0 1 255.5 96.5 L 255.5 96.5 A 0 0 0 0 1 255.5 96.5 L 255.5 96.5 A 0 0 0 0 1 255.5 96.5 L 255.5 96.5 A 2 2 0 0 1 255.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 264.5 96.5 L 264.5 96.5 A 2 2 0 0 1 264.5 96.5 L 264.5 96.5 A 0 0 0 0 1 264.5 96.5 L 264.5 96.5 A 0 0 0 0 1 264.5 96.5 L 264.5 96.5 A 2 2 0 0 1 264.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path><path fill="hsl(var(--sd-hard))" d="M 272.5 96.5 L 272.5 96.5 A 2 2 0 0 1 272.5 96.5 L 272.5 96.5 A 0 0 0 0 1 272.5 96.5 L 272.5 96.5 A 0 0 0 0 1 272.5 96.5 L 272.5 96.5 A 2 2 0 0 1 272.5 96.5 Z" stroke="hsl(var(--sd-card))" stroke-width="1" opacity="1" filter="none" class="highcharts-point highcharts-color-2"></path></g><g class="highcharts-markers highcharts-series-2 highcharts-column-series highcharts-color-2" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" clip-path="none"></g></g><text x="163" text-anchor="middle" class="highcharts-title" data-z-index="4" style="font-size: 1.2em; color: rgb(51, 51, 51); font-weight: bold; fill: rgb(51, 51, 51);" y="25"></text><text x="163" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);" y="118"></text><g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text x="17.088607594937" style="color: hsl(var(--sd-foreground)); cursor: default; font-size: 10px; line-height: 16px; font-weight: 400; opacity: 0.4; fill: hsl(var(--sd-foreground));" text-anchor="middle" transform="translate(0,0)" y="122" opacity="1"></text><text x="105.69620253165" style="color: hsl(var(--sd-foreground)); cursor: default; font-size: 10px; line-height: 16px; font-weight: 400; opacity: 0.4; fill: hsl(var(--sd-foreground));" text-anchor="middle" transform="translate(0,0)" y="122" opacity="1"></text><text x="194.30379746836" style="color: hsl(var(--sd-foreground)); cursor: default; font-size: 10px; line-height: 16px; font-weight: 400; opacity: 0.4; fill: hsl(var(--sd-foreground));" text-anchor="middle" transform="translate(0,0)" y="122" opacity="1"></text><text x="282.91139240507" style="color: hsl(var(--sd-foreground)); cursor: default; font-size: 10px; line-height: 16px; font-weight: 400; opacity: 0.4; fill: hsl(var(--sd-foreground));" text-anchor="middle" transform="translate(0,0)" y="122" opacity="1"></text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="310.58076190948486" style="color: hsl(var(--sd-foreground)); cursor: default; font-size: 10px; line-height: 16px; font-weight: 400; opacity: 0.4; fill: hsl(var(--sd-foreground));" text-anchor="middle" transform="translate(0,0)" y="110" opacity="1">0</text><text x="310.58076190948486" style="color: hsl(var(--sd-foreground)); cursor: default; font-size: 10px; line-height: 16px; font-weight: 400; opacity: 0.4; fill: hsl(var(--sd-foreground));" text-anchor="middle" transform="translate(0,0)" y="62" opacity="1">5</text><text x="310.58076190948486" style="color: hsl(var(--sd-foreground)); cursor: default; font-size: 10px; line-height: 16px; font-weight: 400; opacity: 0.4; fill: hsl(var(--sd-foreground));" text-anchor="middle" transform="translate(0,0)" y="14" opacity="1">10</text></g></svg></div></div><div class="text-sd-foreground -mt-3 mb-2 flex w-full justify-between pl-2 pr-10 text-[10px] opacity-40"><span>01.01</span><span>01.31</span></div><div class="flex gap-4"><div class="text-sd-muted-foreground flex gap-1"><span class="text-sd-easy">Easy</span><span>5</span></div><div class="text-sd-muted-foreground flex gap-1"><span class="text-sd-medium">Med.</span><span>0</span></div><div class="text-sd-muted-foreground flex gap-1"><span class="text-sd-hard">Hard</span><span>0</span></div></div></div></div><div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:r0:-trigger-SUBMISSION" hidden="" id="radix-:r0:-content-SUBMISSION" tabindex="0" class="ring-offset-sd-background focus-visible:ring-sd-ring mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"></div></div><div class="absolute right-4 top-4 flex"><button type="button" role="combobox" aria-controls="radix-:r3:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" class="text-sd-foreground border-sd-input ring-offset-sd-background placeholder:text-sd-muted-foreground focus:ring-sd-ring flex items-center justify-between border bg-transparent py-2 disabled:cursor-not-allowed disabled:opacity-50 h-[28px] w-[52px] rounded-full rounded-r-none px-[11px] text-xs focus:outline-none focus:ring-0 [&amp;&gt;svg]:hidden"><span style="pointer-events: none;"><div class="flex items-center gap-2"><div class="text-sd-muted-foreground text-xs font-medium">M</div><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></div></div></span><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-50" aria-hidden="true"><path d="M4.93179 5.43179C4.75605 5.60753 4.75605 5.89245 4.93179 6.06819C5.10753 6.24392 5.39245 6.24392 5.56819 6.06819L7.49999 4.13638L9.43179 6.06819C9.60753 6.24392 9.89245 6.24392 10.0682 6.06819C10.2439 5.89245 10.2439 5.60753 10.0682 5.43179L7.81819 3.18179C7.73379 3.0974 7.61933 3.04999 7.49999 3.04999C7.38064 3.04999 7.26618 3.0974 7.18179 3.18179L4.93179 5.43179ZM10.0682 9.56819C10.2439 9.39245 10.2439 9.10753 10.0682 8.93179C9.89245 8.75606 9.60753 8.75606 9.43179 8.93179L7.49999 10.8636L5.56819 8.93179C5.39245 8.75606 5.10753 8.75606 4.93179 8.93179C4.75605 9.10753 4.75605 9.39245 4.93179 9.56819L7.18179 11.8182C7.35753 11.9939 7.64245 11.9939 7.81819 11.8182L10.0682 9.56819Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></button><div class="border-sd-border flex h-[28px] w-fit cursor-pointer items-center gap-2 rounded-full rounded-l-none border border-l-0 px-[11px] text-xs" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r4:" data-state="closed"><div class="text-sd-muted-foreground text-xs font-medium">2025-1</div><div class="relative text-[14px] leading-[normal] p-[1px] before:block before:h-3.5 before:w-3.5 text-sd-muted-foreground"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></div></div></div></div></div></div></div><footer class="border-gray-4 bg-paper dark:bg-dark-layer-bg mx-4 mt-[50px] border-t p-5 dark:mx-0 dark:border-none md:mt-24 text-label-2 dark:text-dark-label-2"><nav role="navigation" class="w-full"><div class="m-auto max-w-6xl"><div class="text-xs md:flex md:text-sm"><div class="text-label-3 dark:text-dark-label-3  mb-2 mr-5 md:mb-0">Copyright © <!-- -->2025<!-- --> LeetCode</div><div class="mb-2 flex flex-wrap items-center md:mb-0"><a class="hover:text-label-1 dark:hover:text-dark-label-1 leading-none inline whitespace-nowrap my-2 md:my-0 border-r border-dark-label-3 last:border-none pr-3 mr-3" href="https://leetcode.com/support/">Help Center</a><a class="hover:text-label-1 dark:hover:text-dark-label-1 leading-none inline whitespace-nowrap my-2 md:my-0 border-r border-dark-label-3 last:border-none pr-3 mr-3" href="https://leetcode.com/jobs/">Jobs</a><a class="hover:text-label-1 dark:hover:text-dark-label-1 leading-none inline whitespace-nowrap my-2 md:my-0 border-r border-dark-label-3 last:border-none pr-3 mr-3" href="https://leetcode.com/bugbounty/">Bug Bounty</a><a class="hover:text-label-1 dark:hover:text-dark-label-1 leading-none inline whitespace-nowrap my-2 md:my-0 border-r border-dark-label-3 last:border-none pr-3 mr-3" href="https://leetcode.com/interview/">Assessment</a><a class="hover:text-label-1 dark:hover:text-dark-label-1 leading-none inline whitespace-nowrap my-2 md:my-0 border-r border-dark-label-3 last:border-none pr-3 mr-3" href="https://leetcode.com/student/">Students</a><a class="hover:text-label-1 dark:hover:text-dark-label-1 leading-none inline whitespace-nowrap my-2 md:my-0 border-r border-dark-label-3 last:border-none pr-3 mr-3" href="https://leetcode.com/terms/">Terms</a><a class="hover:text-label-1 dark:hover:text-dark-label-1 leading-none inline whitespace-nowrap my-2 md:my-0 border-r border-dark-label-3 last:border-none pr-3 mr-3" href="https://leetcode.com/privacy/">Privacy Policy</a></div><a class="hover:text-label-1 dark:hover:text-dark-label-1 flex grow items-center space-x-2 justify-self-end md:justify-end" href="https://leetcode.com/region/"><img src="./customer referee- LeetCode_files/us-4787d154ddfcd171038dd5c1c98f7f07.svg" height="18" width="18" alt="United States"><span>United States</span></a></div></div></nav></footer></div><div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events:none"><ol tabindex="-1" class="z-message pointer-events-none fixed left-0 top-0 flex max-h-screen w-full flex-col-reverse items-center gap-4 p-4"></ol></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"_nextI18Next":{"initialI18nStore":{"en":{"common":{"404":{"title":"Page Not Found - LeetCode","pageNotFound":"Page Not Found","message":"Sorry, but we can't find the page you are looking for..."},"meta":{"title":"","description":"","keywords":""},"ok":"OK","cancel":"Cancel","confirm":"Confirm","update":"Update","submit":"Submit","save":"Save","netFailed":"Debugger failed to connect","header":{"logo":{"url":"","description":""},"title":{"problemset-all":""},"action":{"login":{"text":"","url":""}}},"conjunctions":{"and":"and","or":"or"},"pages":{"leetcode":"LeetCode","explore":"Explore","problems":"Problems","interview":{"interview":"Interview","onlineInterview":"Online Interview","assessment":"Assessment"},"contest":"Contest","discuss":"Discuss","store":{"store":"Store","redeem":"Redeem","premium":"Premium","shop":"Micro-shop"},"admin":{"admin":"Admin","library":"Library","review":"Review","operations":"User Management","scores":"Points","contribute":"Contribution","backend":"Administration","internalContest":"Internal Contest Dashboard","contestDashboard":"Contest Dashboard","contestAdmin":"Contest Cheating Dashboard","emailBatch":"Email Batch","dangerZone":"Danger Zone","dbTestcase":"DB Testcase Converter","tagManagement":"Tag Management","questionFeedback":"Question Feedback"},"mobileApp":"Mobile App","playground":"Playground","signIn":"Sign in","register":"Register","signOut":"Sign Out"},"userMenu":{"renew":"Renew","getPremium":"Access all features with our Premium subscription!","orders":"Orders","tryNewFeatures":"Try New Features","translateQuestions":"Display problems in Chinese","unmockUser":"Unmock User","revertToOldVersion":"Classic Mode","categories":{"myList":"My Lists","notebook":"Notebook","submissions":"Submissions","session":"Session","points":"Points","progress":"Progress"},"appearance":"Appearance","appearanceContent":{"auto":"System Default","light":"Light","dark":"Dark"},"account":"Settings"},"streakCounter":{"finished":"Well done! Come back for tomorrow's challenge!","unfinished":"Solve today's Daily Challenge to refresh your streak!","buyTimeTravelTicket":"Buy Time Travel Ticket","missedOneDayThisMonth":"You missed 1 day this month. ","missedDaysThisMonth":"You missed {{count}} days this month. "},"playground":{"playground":"Playground","myPlaygrounds":"My Playgrounds","remainingPlaygrounds":"Remaining","renew":"Renew","templates":{"consoleApplication":"Console Application","empty":"New Playground","frontend":"Frontend","machineLearning":"Machine Learning"}},"links":{"premium":"/subscribe/","discuss":"/discuss/","assessment":"/assessment/","shop":"https://detail.youzan.com/show/goods/newest?alias=271n43vr9hen7","onlineInterview":"https://interview.leetcode.com/interview/","profileArticles":"/submissions/","orders":"/store/orders/","tryNewFeatures":"/new/","explore":"/explore/","admin":{"scores":"/points/admin","operations":"/user_management"},"playground":"/playground","account":"/profile"},"pagination":{"perpage":"/ page"},"expand":"Expand","collapse":"Collapse","difficulty":{"easy":"Easy","medium":"Medium","hard":"Hard"},"easterEgg":{"rewardMessage":"Congratulations! You just found 10 LeetCoins. Happy LeetCoding!"},"markdown":{"heading":"heading","quote":"Quote"},"mentions":{"users":"Users","problems":"Problems"},"confirmModal":{"title":"Are you sure?","confirmBtn":"Confirm","cancelBtn":"Cancel"},"saving":"Saving...","saved":"Saved","autoSaved":"Save automatically","loginRequired":"Sign in required","verifiedRequired":"You need to verify your email","phoneVerifiedRequired":"Your need to verify your phone","maybeVerifiedRequired":"You need to verify your email","dailyCheckIn":"+1 Daily Check-in","copy":"Copy","copyToEditor":"Copy To Editor","copied":"Copied!","copyLink":"Copy Link","viewMore":"View more","viewLess":"View less","code":"Code","survey":{"veryDissatisfied":"Very Dissatisfied","verySatisfied":"Very Satisfied","next":"Next","continue":"Continue","submit":"Submit","questionNo":"Question {{current}} of {{total}}","thanksMsg":"🎉 Thanks for your feedback!"},"qdNav":{"backTitle":"Problem List","expandPanel":"Expand Panel","preQuestion":"Prev Question","nextQuestion":"Next Question","pickOne":"Pick one","openInNewTab":"Open in New Tab"},"premiumModal":{"learnMore":"Learn more","subscribe":"Subscribe"},"truncatedContent":{"viewAll":"View all","viewLess":"View less","openRaw":"Open Raw","showMore":"Show more","showLess":"Show less"},"safariNotUse":"The current version of Safari is too low. For better experience, upgrade to the latest version","account":{"emailVerifyModal":{"title":"Verify your account","description":"Please verify your email address in order to use your account.","verify":"Verify","cancel":"Cancel"}},"medal":{"metadataTitle":"Badge - LeetCode","congratulation":"Congratulations","genPoster":"Generate Image","genPostering":"Generating","saveImgMobile":"Long press to save the image","saveImgPc":"Right-click to save the image","medalEmpty":"Sorry, there are no medals to grab right now."},"recordEventType":{"start":"Start","switchQuestion":"Switch Question","switchLang":"Switch Language","pageVisible":"Page Switch","interpretCode":"Run Code","submitCode":"Submit Code","end":"End","input":"Input","undo":"Undo","redo":"Redo","paste":"External Paste","changeCursor":"Change Cursor","debug":"Debug","debugEnd":"Debug End"},"codeReplay":{"title":"Code Replay","redirectContent":"This account belongs to LeetCode China. Would you like to view it on leetcode.cn?","doNotShowAgain":"Don't show again","eventHistory":"Event History","skipInactive":"Skip inactive","noCodeResults":"No code results","size":"Size","chars":"chars","leaveContestPageN":"Leave Contest Page","returnContestPage":"Return to Contest Page"},"verified":"Verified"},"progress":{"meta":{"title":"Progress - LeetCode"},"heading":"Progress","table":{"lastSubmittedAt":"Last Submitted","problem":"Problem","lastResult":"Last Result","submission":"Submissions","today":"Today","yesterday":"Yesterday","date":"Date","result":"Result","language":"Language","runtime":"Runtime","memory":"Memory","ac":"Accepted","ce":"Compile Error","ie":"Internal Error","mle":"Memory Limit Exceeded","ole":"Output Limit Exceeded","re":"Runtime Error","tle":"Time Limit Exceeded","to":"Timeout","wa":"Wrong Answer","practice":"Practice"},"practiced":{"practiced":"Practice History","filter":"Filter","status":"Status","todo":"Todo","attempted":"Attempted","solved":"Solved","difficulty":"Difficulty","easy":"Easy","medium":"Med.","hard":"Hard","role":"Role","rolePlaceholder":"Select role","reset":"Reset","tags":"Tags","showTags":"Show tags","summary":"Summary","totalSolved":"Total Solved","problems":"Problems","beats":"Beats","submissions":"Submissions","acceptance":"Acceptance","monthly":"Monthly","yearly":"Yearly","total":"Total","solvedTab":"Solved","submissionsTab":"Submissions","noRecords":"No data"}}},"zh":{"common":{"404":{"title":"力扣","pageNotFound":"页面不存在","message":"抱歉！我们找不到您想访问的页面..."},"meta":{"title":"","description":"","keywords":""},"ok":"好","cancel":"取消","confirm":"确认","update":"更新","submit":"提交","save":"保存","netFailed":"网络错误","header":{"logo":{"url":"","description":""},"title":{"problemset-all":""},"action":{"login":{"text":"","url":""}}},"conjunctions":{"and":"and","or":"或"},"pages":{"leetcode":"LeetCode","explore":"学习","problems":"题库","interview":{"interview":"求职","onlineInterview":"在线面试","assessment":"Assessment"},"contest":"竞赛","discuss":"讨论","store":{"store":"商店","redeem":"力扣周边","premium":"Plus 会员","shop":"精品商城"},"admin":{"admin":"管理员","library":"题库","translation":"翻译","operations":"运营管理","scores":"点数","contribute":"贡献","backend":"后台管理","twoStepVerification":"二步验证","internalContest":"Internal Contest Dashboard","contestAdmin":"Contest Cheating Dashboard","dangerZone":"Danger Zone","review":"Review","contestDashboard":"Contest Dashboard"},"mobileApp":"下载 App","playground":"Playground","myPlayground":"我的 Playground","signIn":"登录","register":"注册","signOut":"退出"},"userMenu":{"renew":"续订","getPremium":"升级 Plus 会员享专属特权","tryNewFeatures":"体验新功能","orders":"订单","resume":"个人资料","translateQuestions":"题目以中文展示","translateQuestionsEn":"题目以英文显示","enterprise":"企业招聘","revertToOldVersion":"经典模式","categories":{"myList":"收藏夹","notebook":"笔记本","submissions":"我的题解","session":"进度管理","points":"积分","progress":"进展分析"},"unmockUser":"Unmock User","account":"账号设置","appearance":"外观","appearanceContent":{"auto":"跟随系统","light":"浅色","dark":"深色"}},"streakCounter":{"finished":"干的好！明天再来挑战！","unfinished":"解决今天的「每日 1 题」，刷新你的连胜记录！","buyTimeTravelTicket":"购买补签卡","missedOneDayThisMonth":"这个月你错过了 1 天.","missedDaysThisMonth":"这个月你错过了 {{count}} 天."},"playground":{"playground":"Playground","remainingPlaygrounds":"数量","renew":"升级","myPlaygrounds":"我的 Playgrounds","templates":{"consoleApplication":"控制台程序","empty":"空白 Playground","frontend":"前端程序","machineLearning":"机器学习"}},"links":{"admin":{"scores":"/library/scores","translation":"/contribution/translation/question/admin/","operations":"/management"},"premium":"/premium","discuss":"/circle","interview":"/company","shop":"https://detail.youzan.com/show/goods/newest?alias=271n43vr9hen7","onlineInterview":"https://leetcode.cn/interview","profileArticles":"/profile/articles","tryNewFeatures":"/new/","orders":"/order","explore":"/leetbook","resume":"/profile/info/","playground":"/playground","assessment":"/assessment/","account":"/profile/info"},"pagination":{"perpage":" 条/页"},"expand":"展开","collapse":"收起","difficulty":{"easy":"简单","medium":"中等","hard":"困难"},"data":{"question":{"difficulty":{"easy":"简单","medium":"中等","hard":"困难"}}},"markdown":{"heading":"heading","quote":"Quote"},"mentions":{"users":"用户","problems":"题目"},"confirmModal":{"title":"确定执行此操作?","confirmBtn":"确定","cancelBtn":"取消"},"saving":"保存中...","saved":"保存成功","autoSaved":"已自动保存","loginRequired":"您尚未登录","verifiedRequired":"请绑定手机号或者邮箱后继续操作","phoneVerifiedRequired":"请绑定手机号后继续操作","maybeVerifiedRequired":"请绑定手机号后继续操作","copy":"复制","copyToEditor":"复制到编辑器","copied":"已复制","copyLink":"复制链接","viewMore":"查看更多","viewLess":"收起","code":"代码","dailyCheckIn":"+1 每日登录","//maybeVerifiedRequired":"maybeVerifiedRequired means email in LCUS and phone in LCCN","easterEgg":{"rewardMessage":"恭喜您获得了 10 积分，Happy LeetCoding!"},"survey":{"veryDissatisfied":"非常不满意","verySatisfied":"非常满意","next":"下一题","continue":"继续","submit":"提交","questionNo":"问卷题目 {{current}}/{{total}}","thanksMsg":"🎉 感谢您的反馈!"},"qdNav":{"backTitle":"题库","expandPanel":"展开面板","preQuestion":"上一题","nextQuestion":"下一题","pickOne":"随机一题","openInNewTab":"在新的标签页打开"},"premiumModal":{"learnMore":"了解更多权益","subscribe":"升级 Plus 会员"},"truncatedContent":{"viewAll":"查看全部","viewLess":"收起","openRaw":"打开源码","showMore":"显示更多","showLess":"显示更少"},"safariNotUse":"当前 Safari 版本过低，为了更好的使用体验，请升级到最新版本","medal":{"metadataTitle":"勋章 - 力扣（LeetCode）","congratulation":"恭喜获得","genPoster":"生成海报","genPostering":"生成中...","saveImgMobile":"长按图片保存","saveImgPc":"右键保存图片","medalEmpty":"暂无可领取的勋章"},"recordEventType":{"start":"开始","switchQuestion":"切换问题","switchLang":"切换语言","pageVisible":"切换页面","interpretCode":"运行代码","submitCode":"提交代码","end":"结束","input":"输入","undo":"撤销","redo":"重做","paste":"外部粘贴","changeCursor":"改变光标","debug":"调试","debugEnd":"结束调试"},"codeReplay":{"title":"代码回放","redirectContent":"这个账号属于 LeetCode 国际服. 前往 leetcode.com 查看?","doNotShowAgain":"不再提示","eventHistory":"回放事件","skipInactive":"跳过非活跃事件","noCodeResults":"没有代码结果","size":"大小","chars":"字符","leaveContestPageN":"离开竞赛作答页","returnContestPage":"回到竞赛作答页"},"verified":"已认证"},"progress":{"meta":{"title":"进展分析 - 力扣"},"heading":"进展分析","table":{"lastSubmittedAt":"最近提交","problem":"题目","lastResult":"最新结果","submission":"总提交数","today":"今天","yesterday":"昨天","date":"提交时间","result":"执行结果","language":"所有语言","runtime":"执行用时","memory":"消耗内存","ac":"通过","ce":"编译出错","ie":"内部出错","mle":"超出内存限制","ole":"超出输出限制","re":"执行出错","tle":"超出时间限制","to":"超时","wa":"解答错误","practice":"开始练习"},"practiced":{"practiced":"我的题目","filter":"筛选","status":"状态","todo":"未开始","attempted":"尝试过","solved":"已解答","difficulty":"难度","easy":"简单","medium":"中等","hard":"困难","role":"岗位","rolePlaceholder":"请选择","reset":"清空筛选","tags":"标签","showTags":"显示标签","summary":"概览","totalSolved":"解题总数","problems":"题","beats":"超过","submissions":"提交总数","acceptance":"通过率","monthly":"月","yearly":"年","total":"总数","solvedTab":"已解决","submissionsTab":"已提交","noRecords":"本时段尚未学习"}}}},"initialLocale":"en","ns":["common","progress"],"userConfig":{"i18n":{"defaultLocale":"zh","locales":["en","zh"]},"react":{"useSuspense":false},"reloadOnPrerender":false,"default":{"i18n":{"defaultLocale":"zh","locales":["en","zh"]},"react":{"useSuspense":false},"reloadOnPrerender":false}}}},"enableNewVersion":false,"__N_SSG":true},"page":"/progress","query":{},"buildId":"uPg_ujhGm6L2UYWv7L5JE","isFallback":false,"gsp":true,"appGip":true,"scriptLoader":[]}</script><div id="modal-root"></div><div id="headlessui-portal-root"><div data-headlessui-portal=""></div></div><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;"></p></next-route-announcer><script src="./customer referee- LeetCode_files/549-a8083b6939b9060b.js.download"></script><script src="./customer referee- LeetCode_files/4865-d49fa3413edecbf5.js.download"></script><script src="./customer referee- LeetCode_files/8112-e1027c1c415b43db.js.download"></script><script src="./customer referee- LeetCode_files/9176-7307b6d60adfd200.js.download"></script><script src="./customer referee- LeetCode_files/student-d956b4dbde77ed28.js.download"></script><script src="./customer referee- LeetCode_files/e6848cf3-e709bce199e80e90.js.download"></script><script src="./customer referee- LeetCode_files/c46d6b60-4ee2bbc1b979c6f9.js.download"></script><script src="./customer referee- LeetCode_files/c6bbd088-3853f9ca7427c9f5.js.download"></script><script src="./customer referee- LeetCode_files/f5d5890c-b5db13af837a2748.js.download"></script><script src="./customer referee- LeetCode_files/2cca2479-b4c6e203e834f259.js.download"></script><script src="./customer referee- LeetCode_files/d3048c20-a96db8198c3fafa3.js.download"></script><script src="./customer referee- LeetCode_files/e7372cb8-0b8e608449d0f2ba.js.download"></script><script src="./customer referee- LeetCode_files/7dfef39c-7796288f10cf2dd9.js.download"></script><script src="./customer referee- LeetCode_files/d59bccd2-3e6c09545275e206.js.download"></script><script src="./customer referee- LeetCode_files/bee240a3-1e8a74efd7d88816.js.download"></script><script src="./customer referee- LeetCode_files/ea88be26-43b75960b55a0567.js.download"></script><script src="./customer referee- LeetCode_files/469a8bf9-6df889f2f4df379a.js.download"></script><script src="./customer referee- LeetCode_files/37bf9728-2a4994f71ede73fb.js.download"></script><script src="./customer referee- LeetCode_files/82c1d43a-db7582efb1cf0077.js.download"></script><script src="./customer referee- LeetCode_files/cf44d55e-7af3818bd7ed3f6d.js.download"></script><script src="./customer referee- LeetCode_files/175675d1-7d4214c893a8873b.js.download"></script><script src="./customer referee- LeetCode_files/599b58c7-50bf4b8dc14658e6.js.download"></script><script src="./customer referee- LeetCode_files/4ad82c5e-802f4c2ef21482b5.js.download"></script><script src="./customer referee- LeetCode_files/60d8647c-a27d9fb5c129e9f4.js.download"></script><script src="./customer referee- LeetCode_files/74c95677-c54b68bdf1febed1.js.download"></script><script src="./customer referee- LeetCode_files/9148-98341db4a24cd68f.js.download"></script><script src="./customer referee- LeetCode_files/5435-d1e235a6273fb577.js.download"></script><script src="./customer referee- LeetCode_files/1874-7a06148b662bb784.js.download"></script><script src="./customer referee- LeetCode_files/4428-c422a52959f99726.js.download"></script><script src="./customer referee- LeetCode_files/5426-3a82e035b181264d.js.download"></script><script src="./customer referee- LeetCode_files/6246-c7dff37765207b36.js.download"></script><script src="./customer referee- LeetCode_files/6216-3d1a709b5ee2cc71.js.download"></script><script src="./customer referee- LeetCode_files/6834-207892fd50a8e7fa.js.download"></script><script src="./customer referee- LeetCode_files/2622-efcfdd122e241da3.js.download"></script><script src="./customer referee- LeetCode_files/6360-a5d55f1be93c446b.js.download"></script><script src="./customer referee- LeetCode_files/7438-f219dd528f21f12b.js.download"></script><script src="./customer referee- LeetCode_files/3358-1e248756112d96ea.js.download"></script><script src="./customer referee- LeetCode_files/2320-1b183637a1004b59.js.download"></script><script src="./customer referee- LeetCode_files/401-3674aae16ec1d0ab.js.download"></script><script src="./customer referee- LeetCode_files/9326-705c3025e703594b.js.download"></script><script src="./customer referee- LeetCode_files/5277-018abd42bebd56a5.js.download"></script><script src="./customer referee- LeetCode_files/4869-545dc63b62489d75.js.download"></script><script src="./customer referee- LeetCode_files/8273-c4473b69dc74a39c.js.download"></script><script src="./customer referee- LeetCode_files/9982-307e0560f502a026.js.download"></script><script src="./customer referee- LeetCode_files/923-55da870711682305.js.download"></script><script src="./customer referee- LeetCode_files/468-d46f452007bff231.js.download"></script><script src="./customer referee- LeetCode_files/8637-e10fa4d0451657e3.js.download"></script><script src="./customer referee- LeetCode_files/4151-9b70c454a01f771d.js.download"></script><script src="./customer referee- LeetCode_files/8325-5ef6fe790b8ac231.js.download"></script><script src="./customer referee- LeetCode_files/1006-7af1f51bf482773b.js.download"></script><script src="./customer referee- LeetCode_files/6390-7cb5644043c0acd6.js.download"></script><script src="./customer referee- LeetCode_files/4105-6d357421f4a7d685.js.download"></script><script src="./customer referee- LeetCode_files/2138-076d3ecfc3840e8d.js.download"></script><script src="./customer referee- LeetCode_files/[[...tab]]-3fb1d7b68d06bfb4.js.download"></script><iframe name="__privateStripeMetricsController7910" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="./customer referee- LeetCode_files/m-outer-3437aaddcdf6922d623e172c2d6f9278.html" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe></body></html>
